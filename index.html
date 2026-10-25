@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Learning Hub | Nền Tảng Thực Hành Trí Tuệ Nhân Tạo THPT (QĐ 2422)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        fontFamily: { sans: ['Lexend', 'sans-serif'] }
+    </script>
+    <style>
+        body { font-family: 'Lexend', sans-serif; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(229, 231, 235, 0.8);
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col">
+
+    <!-- HEADER & NAVIGATION -->
+    <header class="gradient-bg text-white sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-indigo-500 flex items-center justify-center text-white text-xl font-bold shadow-md">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <div>
+                    <h1 class="text-xl font-bold tracking-tight">AI-LEARNING HUB <span class="text-xs px-2 py-0.5 bg-indigo-500/40 text-indigo-200 rounded-full border border-indigo-400/30">PRO v2.4</span></h1>
+                    <p class="text-xs text-indigo-200">Giáo dục AI THPT theo Quyết định 2422/QĐ-BGDĐT</p>
+                </div>
+            </div>
+            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+                <a href="#curriculum" class="hover:text-indigo-300 transition">Chương Trình 12T</a>
+                <a href="#colab" class="hover:text-indigo-300 transition">Phòng Thực Hành Colab</a>
+                <a href="#aidemo" class="hover:text-indigo-300 transition">AI Interactive Demo</a>
+                <a href="#evaluation" class="hover:text-indigo-300 transition">Đánh Giá & Rubric</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="gradient-bg text-white py-12 px-4 sm:px-6 lg:px-8 border-b border-indigo-900/50">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="inline-block px-4 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 mb-4">
+                <i class="fa-solid fa-rocket mr-1"></i> Giải Pháp Sáng Kiến Kinh Nghiệm Đóng Gói Trọn Gói
+            </span>
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4 leading-tight">Nền Tảng Trực Quan Hoá & Thực Hành AI THPT</h2>
+            <p class="text-lg text-slate-300 max-w-3xl mx-auto mb-8">
+                Tích hợp trọn bộ 12 tiết học Trí tuệ Nhân tạo, Interactive Colab Notebooks, công cụ AI Demo trực tiếp trên trình duyệt & Hệ thống tự động đo lường đánh giá năng lực học sinh.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="#colab" class="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white font-semibold shadow-lg hover:shadow-indigo-500/30 transition flex items-center">
+                    <i class="fa-solid fa-laptop-code mr-2"></i> Mở Phòng Thực Hành Colab
+                </a>
+                <a href="#aidemo" class="px-6 py-3 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold border border-slate-600 transition flex items-center">
+                    <i class="fa-solid fa-wand-magic-sparkles mr-2"></i> Trải Nghiệm Demo AI
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- SECTION 1: KHUNG CHƯƠNG TRÌNH 12 TIẾT -->
+        <section id="curriculum">
+            <div class="flex items-center justify-between mb-6">
+                <div>
+                    <h3 class="text-2xl font-bold text-slate-900">1. Khung Phân PHối Chương Trình (12 Tiết AI)</h3>
+                    <p class="text-sm text-slate-500">Chuẩn khung năng lực Quyết định 2422/QĐ-BGDĐT</p>
+                </div>
+                <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-xs font-bold">4 Chủ đề Cốt lõi</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Topic 1 -->
+                <div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition border-t-4 border-indigo-500">
+                    <div class="text-indigo-600 font-bold text-sm mb-1">CHỦ ĐỀ 1 (2 Tiết)</div>
+                    <h4 class="font-bold text-slate-800 text-lg mb-2">Tổng Quan Trí Tuệ Nhân Tạo</h4>
+                    <ul class="text-sm text-slate-600 space-y-2 mb-4">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bài 1: Khái niệm, Lịch sử & Phân loại AI (ANI, AGI, ASI).</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bài 2: Trí tuệ Con người vs AI & Phân tích Phép thử Turing.</li>
+                    </ul>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded">SP: Mindmap & Báo cáo Turing</span>
+                </div>
+
+                <!-- Topic 2 -->
+                <div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition border-t-4 border-emerald-500">
+                    <div class="text-emerald-600 font-bold text-sm mb-1">CHỦ ĐỀ 2 (3 Tiết)</div>
+                    <h4 class="font-bold text-slate-800 text-lg mb-2">Dữ Liệu Trong AI</h4>
+                    <ul class="text-sm text-slate-600 space-y-2 mb-4">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bài 3: Q-trình Thu thập & Tiền xử lý dữ liệu Số/Văn bản.</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bài 4: Dữ liệu Ảnh: Gán nhãn (Labeling) & Augmentation.</li>
+                    </ul>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded">SP: Clean Dataset (.csv/.json)</span>
+                </div>
+
+                <!-- Topic 3 -->
+                <div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition border-t-4 border-amber-500">
+                    <div class="text-amber-600 font-bold text-sm mb-1">CHỦ ĐỀ 3 (5 Tiết)</div>
+                    <h4 class="font-bold text-slate-800 text-lg mb-2">Mô Hình & Huấn Luyện AI</h4>
+                    <ul class="text-sm text-slate-600 space-y-2 mb-4">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bài 5: Học máy (ML) & Orange Data Mining.</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bài 6: Computer Vision & Teachable Machine.</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bài 7: Xử lý Ngôn ngữ Tự nhiên (NLP).</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bài 8-9: Generative AI & Web App Prompting.</li>
+                    </ul>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded">SP: AI Models & Web Apps</span>
+                </div>
+
+                <!-- Topic 4 -->
+                <div class="glass-card rounded-2xl p-6 shadow-sm hover:shadow-md transition border-t-4 border-rose-500">
+                    <div class="text-rose-600 font-bold text-sm mb-1">CHỦ ĐỀ 4 (2 Tiết)</div>
+                    <h4 class="font-bold text-slate-800 text-lg mb-2">Đạo Đức & Dự Án AI Mini</h4>
+                    <ul class="text-sm text-slate-600 space-y-2 mb-4">
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bài 10: Đạo đức AI, Bias & Deepfake.</li>
+                        <li><i class="fa-solid fa-check text-green-500 mr-2"></i>Bài 11-12: Báo cáo Dự án Mini AI thực tiễn.</li>
+                    </ul>
+                    <span class="text-xs bg-slate-100 text-slate-600 px-2.5 py-1 rounded">SP: Mini AI App & Presentation</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: PHÒNG THỰC HÀNH GOOGLE COLAB -->
+        <section id="colab" class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-slate-900">2. Phòng Thực Hành Interactive Colab Notebooks</h3>
+                <p class="text-sm text-slate-500">Mã nguồn chuẩn hóa, thực hành trên đám mây, 100% miễn phí không cần cài đặt</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Lab 1 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-indigo-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-700 font-bold text-xs rounded-full">Lab #01</span>
+                            <span class="text-xs text-slate-400">Tiết 3 - 4</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Tiền Xử Lý & Làm Sạch Dữ Liệu AI</h4>
+                        <p class="text-sm text-slate-600 mb-4">Thực hành Pandas, kiểm tra missing values, chuẩn hóa dữ liệu số và làm sạch văn bản Tiếng Việt.</p>
+                    </div>
+                    <a href="https://colab.research.google.com/" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm text-center shadow transition block">
+                        <i class="fa-solid fa-code mr-1"></i> Mở Notebook Lab 1 (Colab)
+                    </a>
+                </div>
+
+                <!-- Lab 2 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-indigo-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-700 font-bold text-xs rounded-full">Lab #02</span>
+                            <span class="text-xs text-slate-400">Tiết 5</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Huấn Luyện Mô Hình Machine Learning (K-NN)</h4>
+                        <p class="text-sm text-slate-600 mb-4">Xây dựng mô hình phân loại với Scikit-Learn, tính toán độ chính xác Accuracy & Confusion Matrix.</p>
+                    </div>
+                    <a href="https://colab.research.google.com/" target="_blank" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm text-center shadow transition block">
+                        <i class="fa-solid fa-code mr-1"></i> Mở Notebook Lab 2 (Colab)
+                    </a>
+                </div>
+
+                <!-- Lab 3 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-indigo-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="px-3 py-1 bg-amber-100 text-amber-700 font-bold text-xs rounded-full">Lab #03</span>
+                            <span class="text-xs text-slate-400">Tiết 7</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Phân Tích Cảm Sức Văn Bản (NLP Sentiment)</h4>
+                        <p class="text-sm text-slate-600 mb-4">Xử lý ngôn ngữ tự nhiên Tiếng Việt, trích xuất đặc trưng TF-IDF và dự đoán bình luận Tích cực/Tiêu cực.</p>
+                    </div>
+                    <a href="https://colab.research.google.com/" target="_blank" class="w-full py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm text-center shadow transition block">
+                        <i class="fa-solid fa-code mr-1"></i> Mở Notebook Lab 3 (Colab)
+                    </a>
+                </div>
+
+                <!-- Lab 4 -->
+                <div class="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:border-indigo-300 transition flex flex-col justify-between">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="px-3 py-1 bg-rose-100 text-rose-700 font-bold text-xs rounded-full">Lab #04</span>
+                            <span class="text-xs text-slate-400">Tiết 9</span>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Đóng Gói Mô Hình Thành Web App (Gradio)</h4>
+                        <p class="text-sm text-slate-600 mb-4">Tạo giao diện tương tác cho model AI chỉ với vài dòng lệnh Python Gradio và phát hành đường link công khai.</p>
+                    </div>
+                    <a href="https://colab.research.google.com/" target="_blank" class="w-full py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm text-center shadow transition block">
+                        <i class="fa-solid fa-code mr-1"></i> Mở Notebook Lab 4 (Colab)
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: TÍCH HỢP INTERACTIVE AI DEMO & PROMPT ASSISTANT -->
+        <section id="aidemo" class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- AI Sentiment Analysis Demo trực tiếp -->
+            <div class="glass-card rounded-3xl p-8 shadow-sm border border-indigo-100">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">AI Demo: Phân Tích Cảm Sức</h3>
+                        <p class="text-xs text-slate-500">Trải nghiệm thuật toán NLP ngay trên trình duyệt</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Nhập ý kiến / bình luận học tập:</label>
+                        <textarea id="userInputText" rows="3" class="w-full p-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:outline-none text-sm" placeholder="Ví dụ: Tiết học hôm nay vô cùng thú vị, em đã tự làm được mô hình AI phân loại ảnh!"></textarea>
+                    </div>
+                    <button onclick="analyzeSentiment()" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-bold rounded-xl shadow transition">
+                        <i class="fa-solid fa-robot mr-2"></i> Phân Tích Bằng AI
+                    </button>
+                    <!-- Kết quả -->
+                    <div id="sentimentResult" class="hidden p-4 rounded-xl bg-slate-100 border border-slate-200">
+                        <div class="text-xs text-slate-500 uppercase tracking-wider font-bold mb-1">Kết quả dự đoán:</div>
+                        <div id="sentimentLabel" class="text-lg font-bold"></div>
+                        <div class="w-full bg-slate-200 rounded-full h-2.5 mt-2">
+                            <div id="sentimentBar" class="h-2.5 rounded-full" style="width: 0%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Prompt Assistant cho Học sinh -->
+            <div class="glass-card rounded-3xl p-8 shadow-sm border border-purple-100">
+                <div class="flex items-center space-x-3 mb-4">
+                    <div class="w-10 h-10 rounded-xl bg-purple-600 text-white flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-900">AI Prompt Assistant</h3>
+                        <p class="text-xs text-slate-500">Trợ lý định hướng tư duy học tập cho Học sinh</p>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">Chọn chủ đề bài học cần trợ giúp:</label>
+                        <select id="promptTopic" class="w-full p-3 rounded-xl border border-slate-300 focus:ring-2 focus:ring-purple-500 text-sm">
+                            <option value="data">Chủ đề 2: Cách tìm bộ dữ liệu (Dataset) chất lượng</option>
+                            <option value="model">Chủ đề 3: Chọn thuật toán Machine Learning phù hợp</option>
+                            <option value="ethics">Chủ đề 4: Phân tích Đạo đức & Bias trong bài toán AI</option>
+                        </select>
+                    </div>
+                    <button onclick="generatePrompt()" class="w-full py-3 bg-purple-600 hover:bg-purple-700 text-white font-bold rounded-xl shadow transition">
+                        <i class="fa-solid fa-lightbulb mr-2"></i> Tạo Câu Hỏi Prompt Chuẩn Sư Phạm
+                    </button>
+                    <!-- Display Prompt -->
+                    <div id="promptOutputContainer" class="hidden p-4 rounded-xl bg-purple-50 border border-purple-200">
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="text-xs font-bold text-purple-700 uppercase">Prompt Gợi Ý Cho AI:</span>
+                            <button onclick="copyPrompt()" class="text-xs text-purple-600 hover:underline"><i class="fa-regular fa-copy"></i> Sao chép</button>
+                        </div>
+                        <p id="promptOutputText" class="text-sm text-purple-900 italic font-mono bg-white p-3 rounded-lg border border-purple-100"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: ĐÁNH GIÁ & MINH CHỨNG ĐỊNH LƯỢNG (RUBRIC & TESTS) -->
+        <section id="evaluation" class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold text-slate-900">3. Bộ Công Cụ Đánh Giá Năng Lực & Rubric Dự Án</h3>
+                <p class="text-sm text-slate-500">Thu thập minh chứng định lượng theo tiêu chuẩn CV 3115/SKHCN-ĐMST</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Pre-test & Post-test Form -->
+                <div class="p-6 rounded-2xl bg-indigo-50 border border-indigo-100">
+                    <h4 class="font-bold text-indigo-900 text-lg mb-2"><i class="fa-solid fa-square-poll-vertical mr-2"></i>Khảo Sát & Kiểm Tra</h4>
+                    <p class="text-sm text-slate-600 mb-4">Đánh giá sự phát triển năng lực học sinh trước (Pre-test) và sau (Post-test) khóa học 12 tiết.</p>
+                    <div class="space-y-2">
+                        <a href="https://forms.google.com" target="_blank" class="block text-center py-2 px-4 rounded-lg bg-indigo-600 text-white text-xs font-bold hover:bg-indigo-700">Mở Form Pre-test Đánh Giá Đầu Vào</a>
+                        <a href="https://forms.google.com" target="_blank" class="block text-center py-2 px-4 rounded-lg bg-indigo-800 text-white text-xs font-bold hover:bg-indigo-900">Mở Form Post-test Đánh Giá Đầu Ra</a>
+                    </div>
+                </div>
+
+                <!-- Rubric Đánh giá -->
+                <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-100 md:col-span-2">
+                    <h4 class="font-bold text-emerald-900 text-lg mb-2"><i class="fa-solid fa-list-check mr-2"></i>Bảng Rubric 4 Mức Độ Đánh Giá Sản Phẩm AI Mini</h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left text-xs text-slate-700">
+                            <thead class="bg-emerald-100 text-emerald-900 font-bold">
+                                <tr>
+                                    <th class="p-2">Tiêu chí</th>
+                                    <th class="p-2">Mức 1 (Cần cố gắng)</th>
+                                    <th class="p-2">Mức 2 (Đạt)</th>
+                                    <th class="p-2">Mức 3 (Khá)</th>
+                                    <th class="p-2">Mức 4 (Xuất sắc)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-emerald-200">
+                                <tr>
+                                    <td class="p-2 font-semibold">1. Dữ liệu</td>
+                                    <td class="p-2">Dữ liệu thô, thiếu nhãn</td>
+                                    <td class="p-2">Dữ liệu cơ bản có gán nhãn</td>
+                                    <td class="p-2">Dữ liệu làm sạch & chuẩn hóa</td>
+                                    <td class="p-2">Dataset phong phú, có Augmentation</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-semibold">2. Mô hình AI</td>
+                                    <td class="p-2">Model lỗi/Độ chính xác < 50%</td>
+                                    <td class="p-2">Accuracy 50% - 70%</td>
+                                    <td class="p-2">Accuracy 70% - 85%</td>
+                                    <td class="p-2">Accuracy > 85%, đánh giá Confusion Matrix</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2 font-semibold">3. Ứng dụng</td>
+                                    <td class="p-2">Chưa đóng gói được Web</td>
+                                    <td class="p-2">Chạy demo trên Colab</td>
+                                    <td class="p-2">Web App đơn giản (Gradio/Streamlit)</td>
+                                    <td class="p-2">Web App UI/UX hoàn chỉnh, chạy thực tế</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-8 px-4 text-center border-t border-slate-800 text-sm">
+        <div class="max-w-7xl mx-auto space-y-2">
+            <p class="font-semibold text-slate-300">Sáng kiến kinh nghiệm Giáo dục Trí tuệ Nhân tạo THPT theo QĐ 2422/QĐ-BGDĐT</p>
+            <p class="text-xs text-slate-500">Tác giả: Thầy Lê Minh Sang | Trường THPT Chuyên Bình Long</p>
+        </div>
+    </footer>
+
+    <!-- INTERACTIVE JAVASCRIPT CODE -->
+    <script>
+        // AI Sentiment Analysis Engine Sim (Demo Pro Trình Duyệt)
+        function analyzeSentiment() {
+            const text = document.getElementById('userInputText').value.trim();
+            const resultDiv = document.getElementById('sentimentResult');
+            const labelDiv = document.getElementById('sentimentLabel');
+            const barDiv = document.getElementById('sentimentBar');
+
+            if (!text) {
+                alert('Vui lòng nhập văn bản để phân tích!');
+                return;
+            }
+
+            resultDiv.classList.remove('hidden');
+
+            // Từ khóa tích cực và tiêu cực mô phỏng NLP
+            const posWords = ['thú vị', 'hay', 'tốt', 'hiểu', 'thích', 'tự làm', 'xuất sắc', 'giỏi', 'dễ'];
+            const negWords = ['chán', 'khó', 'lỗi', 'không hiểu', 'dở', 'tệ', 'phức tạp'];
+
+            let posCount = 0;
+            let negCount = 0;
+
+            const words = text.toLowerCase().split(' ');
+            words.forEach(w => {
+                if (posWords.some(pw => w.includes(pw))) posCount++;
+                if (negWords.some(nw => w.includes(nw))) negCount++;
+            });
+
+            let score = 50; // Neutral default
+            if (posCount > negCount) score = Math.min(95, 65 + posCount * 10);
+            else if (negCount > posCount) score = Math.max(10, 35 - negCount * 10);
+
+            barDiv.style.width = score + '%';
+
+            if (score >= 60) {
+                labelDiv.innerText = '😊 Tích Cực (Positive) - Độ tin cậy: ' + score + '%';
+                labelDiv.className = 'text-lg font-bold text-green-600';
+                barDiv.className = 'h-2.5 rounded-full bg-green-500';
+            } else if (score <= 40) {
+                labelDiv.innerText = '🙁 Tiêu Cực (Negative) - Độ tin cậy: ' + (100 - score) + '%';
+                labelDiv.className = 'text-lg font-bold text-red-600';
+                barDiv.className = 'h-2.5 rounded-full bg-red-500';
+            } else {
+                labelDiv.innerText = '😐 Trung Tính (Neutral) - Độ tin cậy: 50%';
+                labelDiv.className = 'text-lg font-bold text-amber-600';
+                barDiv.className = 'h-2.5 rounded-full bg-amber-500';
+            }
+        }
+
+        // AI Prompt Generator
+        function generatePrompt() {
+            const topic = document.getElementById('promptTopic').value;
+            const container = document.getElementById('promptOutputContainer');
+            const output = document.getElementById('promptOutputText');
+
+            const prompts = {
+                'data': '"Tôi là học sinh THPT đang thực hiện dự án AI phân loại rác thải. Hãy gợi ý cho tôi 3 nguồn dữ liệu hình ảnh mở (Open Dataset) uy tín, và hướng dẫn 4 bước gán nhãn ảnh đơn giản bằng công cụ MakeSense.ai mà không cần cài đặt phần mềm."',
+                'model': '"Tôi đang có bộ dữ liệu về thông số học tập của học sinh dạng bảng (.csv). Hãy so sánh ưu và nhược điểm của thuật toán Decision Tree và K-Nearest Neighbors (K-NN) khi áp dụng cho bài toán này dưới góc nhìn dễ hiểu nhất cho học sinh lớp 11."',
+                'ethics': '"Hãy phân tích một trường hợp thực tế về hiện tượng thiên vị dữ liệu (Data Bias) trong hệ thống AI nhận diện khuôn mặt. Từ đó đặt ra 3 câu hỏi thảo luận về đạo đức AI cho nhóm học sinh THPT."'
+            };
+
+            output.innerText = prompts[topic];
+            container.classList.remove('hidden');
+        }
+
+        function copyPrompt() {
+            const text = document.getElementById('promptOutputText').innerText;
+            navigator.clipboard.writeText(text);
+            alert('Đã sao chép kịch bản Prompt vào bộ nhớ tạm!');
+        }
+    </script>
+</body>
+</html>
