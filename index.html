@@ -11,7 +11,13 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
-        fontFamily: { sans: ['Lexend', 'sans-serif'] }
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Lexend', 'sans-serif'] }
+                }
+            }
+        }
     </script>
     <style>
         body { font-family: 'Lexend', sans-serif; }
@@ -76,7 +82,7 @@
         <section id="curriculum">
             <div class="flex items-center justify-between mb-6">
                 <div>
-                    <h3 class="text-2xl font-bold text-slate-900">1. Khung Phân PHối Chương Trình (12 Tiết AI)</h3>
+                    <h3 class="text-2xl font-bold text-slate-900">1. Khung Phân Phối Chương Trình (12 Tiết AI)</h3>
                     <p class="text-sm text-slate-500">Chuẩn khung năng lực Quyết định 2422/QĐ-BGDĐT</p>
                 </div>
                 <span class="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-xs font-bold">4 Chủ đề Cốt lõi</span>
@@ -131,11 +137,11 @@
             </div>
         </section>
 
-        <!-- SECTION 2: PHÒNG THỰC HÀNH GOOGLE COLAB -->
+        <!-- SECTION 2: PHÒNG THỰC HÀNH GOOGLE COLAB (KẾT NỐI TRỰC TIẾP GITHUB) -->
         <section id="colab" class="bg-white rounded-3xl p-8 shadow-sm border border-slate-200">
             <div class="mb-6">
                 <h3 class="text-2xl font-bold text-slate-900">2. Phòng Thực Hành Interactive Colab Notebooks</h3>
-                <p class="text-sm text-slate-500">Mã nguồn chuẩn hóa, thực hành trên đám mây, 100% miễn phí không cần cài đặt</p>
+                <p class="text-sm text-slate-500">Mã nguồn chuẩn hóa, thực hành trên đám mây mở trực tiếp 1-click từ GitHub</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -149,7 +155,7 @@
                         <h4 class="font-bold text-slate-800 text-lg mb-2">Tiền Xử Lý & Làm Sạch Dữ Liệu AI</h4>
                         <p class="text-sm text-slate-600 mb-4">Thực hành Pandas, kiểm tra missing values, chuẩn hóa dữ liệu số và làm sạch văn bản Tiếng Việt.</p>
                     </div>
-                    <a href="https://colab.research.google.com/" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm text-center shadow transition block">
+                    <a href="https://colab.research.google.com/github/leminhsang1987/ai-learning-hub/blob/main/Lab1_Data_Preprocessing.ipynb" target="_blank" class="w-full py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm text-center shadow transition block">
                         <i class="fa-solid fa-code mr-1"></i> Mở Notebook Lab 1 (Colab)
                     </a>
                 </div>
@@ -164,7 +170,7 @@
                         <h4 class="font-bold text-slate-800 text-lg mb-2">Huấn Luyện Mô Hình Machine Learning (K-NN)</h4>
                         <p class="text-sm text-slate-600 mb-4">Xây dựng mô hình phân loại với Scikit-Learn, tính toán độ chính xác Accuracy & Confusion Matrix.</p>
                     </div>
-                    <a href="https://colab.research.google.com/" target="_blank" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm text-center shadow transition block">
+                    <a href="https://colab.research.google.com/github/leminhsang1987/ai-learning-hub/blob/main/Lab2_Machine_Learning_KNN.ipynb" target="_blank" class="w-full py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm text-center shadow transition block">
                         <i class="fa-solid fa-code mr-1"></i> Mở Notebook Lab 2 (Colab)
                     </a>
                 </div>
@@ -179,7 +185,7 @@
                         <h4 class="font-bold text-slate-800 text-lg mb-2">Phân Tích Cảm Sức Văn Bản (NLP Sentiment)</h4>
                         <p class="text-sm text-slate-600 mb-4">Xử lý ngôn ngữ tự nhiên Tiếng Việt, trích xuất đặc trưng TF-IDF và dự đoán bình luận Tích cực/Tiêu cực.</p>
                     </div>
-                    <a href="https://colab.research.google.com/" target="_blank" class="w-full py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm text-center shadow transition block">
+                    <a href="https://colab.research.google.com/github/leminhsang1987/ai-learning-hub/blob/main/Lab3_NLP_Sentiment_Analysis.ipynb" target="_blank" class="w-full py-2.5 rounded-xl bg-amber-600 hover:bg-amber-700 text-white font-semibold text-sm text-center shadow transition block">
                         <i class="fa-solid fa-code mr-1"></i> Mở Notebook Lab 3 (Colab)
                     </a>
                 </div>
@@ -194,7 +200,7 @@
                         <h4 class="font-bold text-slate-800 text-lg mb-2">Đóng Gói Mô Hình Thành Web App (Gradio)</h4>
                         <p class="text-sm text-slate-600 mb-4">Tạo giao diện tương tác cho model AI chỉ với vài dòng lệnh Python Gradio và phát hành đường link công khai.</p>
                     </div>
-                    <a href="https://colab.research.google.com/" target="_blank" class="w-full py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm text-center shadow transition block">
+                    <a href="https://colab.research.google.com/github/leminhsang1987/ai-learning-hub/blob/main/Lab4_Gradio_WebApp_Deployment.ipynb" target="_blank" class="w-full py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm text-center shadow transition block">
                         <i class="fa-solid fa-code mr-1"></i> Mở Notebook Lab 4 (Colab)
                     </a>
                 </div>
@@ -310,10 +316,10 @@
                                 </tr>
                                 <tr>
                                     <td class="p-2 font-semibold">2. Mô hình AI</td>
-                                    <td class="p-2">Model lỗi/Độ chính xác < 50%</td>
+                                    <td class="p-2">Model lỗi/Độ chính xác &lt; 50%</td>
                                     <td class="p-2">Accuracy 50% - 70%</td>
                                     <td class="p-2">Accuracy 70% - 85%</td>
-                                    <td class="p-2">Accuracy > 85%, đánh giá Confusion Matrix</td>
+                                    <td class="p-2">Accuracy &gt; 85%, đánh giá Confusion Matrix</td>
                                 </tr>
                                 <tr>
                                     <td class="p-2 font-semibold">3. Ứng dụng</td>
@@ -354,7 +360,6 @@
 
             resultDiv.classList.remove('hidden');
 
-            // Từ khóa tích cực và tiêu cực mô phỏng NLP
             const posWords = ['thú vị', 'hay', 'tốt', 'hiểu', 'thích', 'tự làm', 'xuất sắc', 'giỏi', 'dễ'];
             const negWords = ['chán', 'khó', 'lỗi', 'không hiểu', 'dở', 'tệ', 'phức tạp'];
 
@@ -367,7 +372,7 @@
                 if (negWords.some(nw => w.includes(nw))) negCount++;
             });
 
-            let score = 50; // Neutral default
+            let score = 50;
             if (posCount > negCount) score = Math.min(95, 65 + posCount * 10);
             else if (negCount > posCount) score = Math.max(10, 35 - negCount * 10);
 
