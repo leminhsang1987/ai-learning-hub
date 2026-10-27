@@ -1,216 +1,161 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI-Learning Hub | Hệ Sinh Thái Giảng Dạy 12 Tiết AI (QĐ 2422)</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trung tâm giảng dạy AI THPT</title>
+<meta name="description" content="Trung tâm truy cập học liệu dạy Trí tuệ nhân tạo THPT (lớp 10, 11, 12) theo khung yêu cầu cần đạt của Bộ GD&ĐT.">
+<style>
+:root{--bg:#f4f6f9;--sf:#fff;--ink:#14202e;--mute:#556274;--line:#d8dfe7;--c10:#0b7a84;--c11:#5646c8;--c12:#b3322b;--acc:var(--c10);--r:6px;color-scheme:light}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1720;--sf:#17212c;--ink:#e8eef5;--mute:#9aa8b8;--line:#2a3745;--c10:#4cc3cd;--c11:#a094ff;--c12:#ff8d84;color-scheme:dark}}
+body[data-g="11"]{--acc:var(--c11)}body[data-g="12"]{--acc:var(--c12)}
+*{box-sizing:border-box}
+html{scroll-padding-top:150px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Be Vietnam Pro","Segoe UI",system-ui,-apple-system,Roboto,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+header{position:sticky;top:0;z-index:5;background:var(--sf);border-bottom:1px solid var(--line)}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+.top{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center;padding:12px 0 8px}
+.top h1{font-size:1.15rem;line-height:1.25;margin:0;flex:1 1 260px;letter-spacing:-.01em}
+.top h1 small{display:block;font-weight:400;color:var(--mute);font-size:.82rem}
+.top input[type=search]{flex:1 1 220px;max-width:340px;padding:8px 12px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--ink);font:inherit}
+.tools a{font-size:.85rem;margin-left:12px;color:var(--mute)}
+.tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding-bottom:12px}
+.tabs button{font:inherit;text-align:left;padding:8px 12px;border:2px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--ink);cursor:pointer}
+.tabs button b{display:block;font-size:1.05rem}
+.tabs button span{font-size:.8rem;color:var(--mute)}
+.tabs button[aria-pressed=true]{border-color:var(--t);background:var(--sf);box-shadow:inset 0 -4px 0 var(--t)}
+main{padding:20px 16px 48px}
+h2.cd{font-size:1rem;margin:28px 0 10px;padding-left:10px;border-left:5px solid var(--acc)}
+.row{display:grid;grid-template-columns:28px 1fr;gap:8px;align-items:start;margin-bottom:8px}
+.done{width:20px;height:20px;margin:15px 0 0;accent-color:var(--acc)}
+details{background:var(--sf);border:1px solid var(--line);border-radius:var(--r)}
+details[open]{border-color:var(--acc)}
+summary{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;padding:12px 14px;cursor:pointer;list-style:none}
+summary::-webkit-details-marker{display:none}
+.no{font-weight:700;color:var(--acc);min-width:2.2em}
+.tt{font-weight:600;flex:1 1 280px}
+.codes{display:flex;flex-wrap:wrap;gap:4px}
+.codes b{font-size:.75rem;font-weight:600;padding:1px 7px;border-radius:99px;border:1px solid var(--line);color:var(--mute)}
+.body{padding:2px 14px 14px;max-width:78ch}
+.body h3{font-size:.9rem;margin:14px 0 4px;color:var(--acc)}
+.body p,.body ul{margin:0}.body ul{padding-left:1.2em}.body li{margin:2px 0}
+.act{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.act a,.act span,.act button{font:inherit;font-size:.9rem;padding:7px 12px;border-radius:var(--r);border:1px solid var(--line);text-decoration:none;background:var(--bg);cursor:pointer;color:var(--ink)}
+.act .pri{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:600}
+body[data-g="12"] .act .pri,body[data-g="10"] .act .pri,body[data-g="11"] .act .pri{color:#fff}
+@media(prefers-color-scheme:dark){.act .pri{color:#0f1720!important}}
+.act .off{color:var(--mute);border-style:dashed;cursor:default}
+.empty{padding:32px 0;color:var(--mute)}
+footer{border-top:1px solid var(--line);padding:16px 0 32px;color:var(--mute);font-size:.85rem}
+#pv{position:fixed;inset:0;z-index:20;background:#101820;color:#f2f6fa;display:flex;flex-direction:column;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+#pv[hidden]{display:none}
+#pv .bar{display:flex;justify-content:space-between;gap:12px;padding:12px 20px;font-size:.9rem;color:#9fb0c2}
+#pv button{font:inherit;color:#f2f6fa;background:#243342;border:1px solid #3a4c5f;border-radius:var(--r);padding:8px 16px;cursor:pointer}
+#pv .sl{flex:1;overflow:auto;padding:2vh 6vw;display:flex;flex-direction:column;justify-content:center;max-width:1100px;width:100%;margin:0 auto}
+#pv h1{font-size:clamp(1.8rem,5vw,3.4rem);line-height:1.2;margin:.2em 0}
+#pv h2{font-size:clamp(1.3rem,3vw,2rem);color:#7fd6de;margin:0 0 .6em}
+#pv p,#pv li{font-size:clamp(1.1rem,2.6vw,1.8rem);line-height:1.5}
+#pv li{margin:.35em 0}#pv ul{padding-left:1.1em;margin:0}
+#pv .codes b{font-size:1rem;color:#c8d4e0;border-color:#4a5d70}
+#pv .nav{display:flex;justify-content:space-between;align-items:center;padding:12px 20px}
+#pv a{color:#7fd6de}
+@media(prefers-reduced-motion:no-preference){details[open] .body{animation:o .18s ease-out}@keyframes o{from{opacity:.4}to{opacity:1}}}
+</style>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen">
+<body data-g="10">
+<header><div class="wrap">
+ <div class="top">
+  <h1 id="ttl">Trung tâm giảng dạy AI THPT<small id="sub"></small></h1>
+  <input type="search" id="q" placeholder="Tìm tên bài, mã YCCĐ, từ khóa" aria-label="Tìm kiếm">
+  <span class="tools" id="tools"></span>
+ </div>
+ <nav class="tabs" id="tabs" aria-label="Chọn khối"></nav>
+</div></header>
+<main class="wrap" id="main"></main>
+<footer><div class="wrap">
+ Nội dung bám khung yêu cầu cần đạt Chương trình giáo dục AI (QĐ 2422/QĐ-BGDĐT). Tiến độ "đã dạy" chỉ lưu trên máy này.<br>
+ Sản phẩm được xây dựng với sự hỗ trợ của AI; giáo viên thiết kế, rà soát và chịu trách nhiệm về nội dung.
+</div></footer>
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="bg-indigo-900 text-white sticky top-0 z-50 shadow-md">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="bg-indigo-600 p-2 rounded-lg text-xl font-bold">
-                    <i class="fa-solid fa-brain"></i>
-                </div>
-                <div>
-                    <h1 class="font-bold text-lg leading-tight">AI-LEARNING HUB</h1>
-                    <p class="text-xs text-indigo-200">Trường THPT chuyên Bình Long | QĐ 2422/QĐ-BGDĐT</p>
-                </div>
-            </div>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium">
-                <a href="#gioi-thieu" class="hover:text-indigo-300 transition">Tổng quan</a>
-                <a href="#chu-de" class="hover:text-indigo-300 transition">12 Tiết AI</a>
-                <a href="#phong-lab" class="hover:text-indigo-300 transition">Phòng Lab Hugging Face</a>
-                <a href="#tai-lieu" class="hover:text-indigo-300 transition">Tài liệu & SKKN</a>
-            </nav>
-            <div>
-                <span class="bg-indigo-700 text-xs px-3 py-1 rounded-full border border-indigo-500">GV: Lê Minh Sang</span>
-            </div>
-        </div>
-    </header>
+<div id="pv" hidden role="dialog" aria-modal="true" aria-label="Chế độ trình chiếu">
+ <div class="bar"><span id="pvt"></span><button id="pvx">Đóng (Esc)</button></div>
+ <div class="sl" id="sl"></div>
+ <div class="nav"><button id="pvp">Trước</button><span id="pvn"></span><button id="pvf">Sau</button></div>
+</div>
 
-    <!-- MAIN CONTENT -->
-    <main class="flex-grow">
-        
-        <!-- HERO SECTION -->
-        <section id="gioi-thieu" class="bg-gradient-to-br from-indigo-900 via-indigo-800 to-slate-900 text-white py-16 px-4">
-            <div class="max-w-5xl mx-auto text-center">
-                <span class="bg-indigo-500/30 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-indigo-400/30">Hệ sinh thái số phục vụ SKKN</span>
-                <h2 class="text-3xl sm:text-5xl font-extrabold mt-4 mb-6 leading-tight">
-                    Giải Pháp Số Hóa & Trải Nghiệm <br><span class="text-indigo-400">12 Tiết Trí Tuệ Nhân Tạo</span>
-                </h2>
-                <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto mb-8">
-                    Nền tảng tích hợp GitHub Pages và Hugging Face Spaces. Giúp học sinh THPT tương tác trực quan, tinh chỉnh tham số mô hình AI mà không cần cài đặt phần mềm phức tạp.
-                </p>
-                <div class="flex flex-wrap justify-center gap-4">
-                    <a href="#chu-de" class="bg-indigo-600 hover:bg-indigo-500 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition duration-200 flex items-center space-x-2">
-                        <i class="fa-solid fa-book-open"></i>
-                        <span>Chi Tiết 12 Tiết Học</span>
-                    </a>
-                    <a href="#phong-lab" class="bg-white/10 hover:bg-white/20 text-white font-semibold px-6 py-3 rounded-xl border border-white/20 backdrop-blur transition duration-200 flex items-center space-x-2">
-                        <i class="fa-solid fa-flask"></i>
-                        <span>Trải nghiệm Phòng Lab AI</span>
-                    </a>
-                </div>
-            </div>
-        </section>
+<script>
+/* ===== CẤU HÌNH: sửa tại đây ===== */
+const C={
+  ten:"Tổ Tin học",            // tên tổ/trường hiển thị dưới tiêu đề
+  nam:"2026–2027",             // phiên bản năm học
+  repo:"",                     // ví dụ "https://github.com/ten-to-chuc/ai-thpt" (bật 2 nút nhân bản/tải offline)
+  /* Liệt kê tài nguyên ĐÃ CÓ thật để bật liên kết. Dạng "khối-tiết:loại"
+     loại: bai (kế hoạch bài), slide (trình chiếu), phieu (phiếu học tập), lab
+     Ví dụ: ["10-01:slide","10-01:lab"] */
+  ready:[]
+};
+/* Quy ước đường dẫn (tương đối): bai/10-01/index.html, bai/10-01/slide.html, bai/10-01/phieu.html, lab/10-01/index.html */
+const P={bai:i=>`bai/${i}/`,slide:i=>`bai/${i}/slide.html`,phieu:i=>`bai/${i}/phieu.html`,lab:i=>`lab/${i}/`};
+const L={bai:"Kế hoạch bài dạy",slide:"Trình chiếu đầy đủ",phieu:"Phiếu học tập"};
+/* ================================== */
+const D=[{"g":10,"t":1,"cd":"Kiểm soát con người và Quản trị rủi ro AI","ten":"Vai trò của con người trong hệ thống AI","ma":["10.A1.1"],"y":"Xác định vai trò của con người trong việc sử dụng, vận hành, tùy chỉnh một hệ thống AI cụ thể.","h":"Phân tích quy trình của một hệ thống số quen thuộc (chấm trắc nghiệm, gợi ý video); lập sơ đồ luồng phối hợp giữa con người và thuật toán.","s":"Sơ đồ phân vai Người – Máy; Phiếu phân tích vai trò chủ thể của con người.","lab":"Người trong vòng lặp"},{"g":10,"t":2,"cd":"Kiểm soát con người và Quản trị rủi ro AI","ten":"Sự cần thiết con người kiểm soát AI","ma":["10.A1.2"],"y":"Giải thích lý do con người cần kiểm soát AI dựa trên các giá trị an toàn, công bằng và quyền con người.","h":"Thảo luận ca nghiên cứu về các sự cố khi buông lỏng kiểm soát AI; tranh luận: 'Vì sao AI chỉ có vai trò tham mưu mà không có quyền phán quyết cuối cùng?'.","s":"Phiếu tổng hợp lý do con người kiểm soát AI; Bảng khuyến nghị ranh giới an toàn.","lab":"Khi AI phán quyết một mình"},{"g":10,"t":3,"cd":"Kiểm soát con người và Quản trị rủi ro AI","ten":"Nhận diện rủi ro của sản phẩm AI","ma":["10.A2.1"],"y":"Nhận biết một số rủi ro đối với cá nhân và xã hội mà sản phẩm AI có thể mang lại.","h":"Hoạt động nhóm nhận diện các rủi ro thực tế: rò rỉ dữ liệu cá nhân, lệ thuộc tư duy và giảm khả năng sáng tạo…","s":"Bảng phân loại rủi ro công nghệ AI đối với cá nhân và học đường.","lab":"Bản đồ rủi ro AI"},{"g":10,"t":4,"cd":"Pháp luật số và Đạo đức trong sáng tạo AI","ten":"Quy định pháp luật bảo vệ người dùng số","ma":["10.A3.1"],"y":"Kể tên, tìm hiểu các quy định, luật bảo vệ người dùng: Luật An ninh mạng, Luật Bảo vệ dữ liệu cá nhân, Luật Dữ liệu.","h":"Đóng vai tuyên truyền viên pháp luật; tra cứu tóm tắt các điều khoản cơ bản bảo vệ quyền riêng tư và dữ liệu cá nhân của công dân số.","s":"Infographic / Tờ gấp tóm tắt các quy định pháp luật số bảo vệ người dùng.","lab":"Luật nào bảo vệ tôi?"},{"g":10,"t":5,"cd":"Pháp luật số và Đạo đức trong sáng tạo AI","ten":"Nhận diện hành vi và sự cố vi phạm pháp luật","ma":["10.B2.1"],"y":"Nêu ví dụ về hành vi dùng AI hoặc sự cố liên quan đến AI vi phạm nội quy nhà trường hoặc pháp luật.","h":"Xử lý 'Hộp tình huống': Phân tích các trường hợp dùng AI làm giả ảnh/giọng nói (Deepfake) trêu chọc bạn bè, gian lận kiểm tra hoặc chia sẻ thông tin mật.","s":"Phiếu phân tích tình huống vi phạm & giải pháp xử lý theo nội quy học đường.","lab":"Hộp tình huống"},{"g":10,"t":6,"cd":"Pháp luật số và Đạo đức trong sáng tạo AI","ten":"Đạo đức trong vận hành và sáng tạo AI","ma":["10.B3.1"],"y":"Trình bày ví dụ về vấn đề đạo đức phát sinh: thiên vị dữ liệu (bias), vi phạm quyền riêng tư, thiếu minh bạch.","h":"Tranh biện học đường: 'Liệu AI có hoàn toàn vô tư, công bằng?'; phân tích ca nghiên cứu về thuật toán tuyển dụng/chấm điểm bị định kiến.","s":"Bản đồ tư duy phân tích các vấn đề đạo đức AI; Biên bản kết quả tranh biện.","lab":"Thuật toán tuyển dụng thiên vị"},{"g":10,"t":7,"cd":"Thực hành ứng dụng AI và Kỹ thuật Prompt","ten":"Khảo sát ứng dụng AI trong thực tế và học tập","ma":["10.C2.1","10.C2.2","10.C2.3"],"y":"Xác định vấn đề thực tế ứng dụng AI (nông nghiệp, dịch vụ,...); phân loại công cụ; ứng dụng hỗ trợ tự học.","h":"Khảo sát các giải pháp AI gần gũi ở Việt Nam; thực hành trải nghiệm và phân loại công cụ AI hỗ trợ việc học theo môn học.","s":"Bảng danh mục phân loại công cụ AI hỗ trợ học tập (môn học, tính năng, điểm hạn chế).","lab":"Chợ ứng dụng AI Việt Nam"},{"g":10,"t":8,"cd":"Thực hành ứng dụng AI và Kỹ thuật Prompt","ten":"Kỹ thuật đặt câu lệnh (Prompt) hiệu quả","ma":["10.C3.1","10.C3.2"],"y":"Nắm rõ yêu cầu cấu trúc một Prompt chuẩn (ngữ cảnh, vai trò, yêu cầu, định dạng); thực hành đặt Prompt.","h":"Thực hành trên máy: Sửa prompt sơ sài thành prompt có cấu trúc 4 thành tố; thử nghiệm 2–3 phiên bản và kiểm chứng thông tin đối chiếu với SGK.","s":"Phiếu thiết kế Prompt chuẩn cấu trúc; Nhật ký thực nghiệm và kiểm chứng kết quả.","lab":"Prompt Lab (phát lại)"},{"g":10,"t":9,"cd":"Thực hành ứng dụng AI và Kỹ thuật Prompt","ten":"Một số công nghệ trong AI","ma":["10.C3.3"],"y":"Phân biệt được AI tạo sinh với các hệ thống AI phân loại, dự đoán qua ví dụ cụ thể.","h":"Thử nghiệm ghép cặp tình huống: Đưa bài toán nhận diện biển số/lọc thư rác (phân loại) đối chiếu với bài toán sinh ý tưởng/tóm tắt tài liệu (tạo sinh).","s":"Bảng ma trận so sánh bản chất và ứng dụng giữa AI tạo sinh và AI phân loại.","lab":"Phân loại hay tạo sinh?"},{"g":10,"t":10,"cd":"Chất lượng dữ liệu và Cấu trúc hệ thống AI","ten":"Tầm quan trọng của chất lượng dữ liệu huấn luyện","ma":["10.C4.1"],"y":"Phân tích sự ảnh hưởng của tính chuẩn xác, đầy đủ và công bằng của dữ liệu đến chất lượng đầu ra của AI.","h":"Quan sát bộ dữ liệu mẫu bị thiếu hụt nhóm hoặc gắn nhãn sai lệch; chỉ ra hiện tượng 'Dữ liệu rác tạo kết quả rác' và đề xuất cách làm sạch dữ liệu.","s":"Báo cáo đánh giá chất lượng bộ dữ liệu mẫu; Phiếu ghi nhận lỗi nhãn dữ liệu.","lab":"Dữ liệu rác, kết quả rác"},{"g":10,"t":11,"cd":"Chất lượng dữ liệu và Cấu trúc hệ thống AI","ten":"Cấu trúc cơ bản và Vấn đề phát sinh của hệ thống AI","ma":["10.D1.1","10.D2.1","10.D2.2"],"y":"Xác định mục tiêu hệ thống; mô tả 5 thành phần (dữ liệu, thuật toán, mô hình, đầu ra, phản hồi); lỗi vận hành.","h":"Nhóm học sinh xây dựng sơ đồ luồng thông tin 5 thành phần cho một ý tưởng AI giải quyết bài toán thực tế; dự báo một số lỗi vận hành.","s":"Sơ đồ kiến trúc 5 thành phần của hệ thống AI; Bản mô tả vấn đề phát sinh và hướng khắc phục.","lab":"Lắp ráp hệ thống AI 5 thành phần"},{"g":10,"t":12,"cd":"Chất lượng dữ liệu và Cấu trúc hệ thống AI","ten":"Báo cáo ý tưởng hệ thống AI và Đánh giá tổng kết","ma":["Tổng hợp"],"y":"Trình bày giải pháp ý tưởng; cam kết sử dụng AI minh bạch, có khai báo nguồn và trách nhiệm giải trình.","h":"Thuyết trình poster đồ án ý tưởng AI của nhóm (kèm Bản khai báo sử dụng AI); thực hiện đánh giá chéo đồng đẳng theo rubric an toàn, đạo đức.","s":"Hồ sơ ý tưởng dự án AI hoàn chỉnh; Phiếu đánh giá.","lab":"Poster dự án và khai báo AI"},{"g":11,"t":1,"cd":"Sử dụng an toàn, bền vững và Quyền dữ liệu","ten":"Quy trình sử dụng sản phẩm AI an toàn","ma":["11.A1.1"],"y":"Xây dựng quy trình chuẩn mực khi sử dụng một công cụ AI cụ thể (xác định mục tiêu -> chọn lọc dữ liệu -> kiểm chứng).","h":"Nhóm chọn một công cụ AI cụ thể; thiết kế lưu đồ các bước an toàn theo 3 pha: Trước khi dùng (chuẩn bị dữ liệu) – Trong khi dùng (tương tác) – Sau khi dùng (kiểm chứng).","s":"Lưu đồ / Sơ đồ quy trình sử dụng AI an toàn; Bảng tiêu chí tự kiểm soát 3 pha.","lab":"Dựng quy trình 3 pha"},{"g":11,"t":2,"cd":"Sử dụng an toàn, bền vững và Quyền dữ liệu","ten":"Nâng cao năng lực cùng AI","ma":["11.A1.2"],"y":"Phân tích trường hợp thực tế: AI giúp nâng cao năng suất nhưng con người phải giữ quyền kiểm soát quyết định.","h":"Nghiên cứu tình huống đa ngành (bác sĩ đọc chẩn đoán hình ảnh, kỹ sư phần mềm tạo mã nguồn); xác định phần việc AI hỗ trợ tăng tốc và phần con người phải trực tiếp quyết định.","s":"Bảng ma trận phân vai Người – Máy; Bảng đối chiếu ranh giới 'Nâng cao năng lực vs Mất quyền kiểm soát'.","lab":"Nâng cao năng lực hay mất kiểm soát?"},{"g":11,"t":3,"cd":"Sử dụng an toàn, bền vững và Quyền dữ liệu","ten":"Tính bền vững, Công bằng và Quyền của người dùng dữ liệu","ma":["11.A2.1","11.A2.2","11.A3.1"],"y":"Nêu được ví dụ về một số ứng dụng AI có tác động tích cực và hiệu quả. Phân tích các yếu tố thể hiện tính bền vững (tiêu thụ năng lượng, môi trường), tính công bằng xã hội và các quyền cơ bản của người dùng dữ liệu (biết, đồng ý, xóa).","h":"Hoạt động nhóm nghiên cứu tình huống thực tế (ứng dụng AI trong nông nghiệp, y tế, giáo dục); thảo luận tiêu chí bền vững và công bằng; đọc tình huống/chính sách bảo mật rút gọn, xác định 3 quyền dữ liệu (biết, đồng ý, xóa).","s":"Phiếu thẩm định quyền dữ liệu cá nhân; Bài tham luận ngắn 'AI xanh và Công bằng xã hội'.","lab":"AI xanh và công bằng"},{"g":11,"t":4,"cd":"Quản trị rủi ro và Ứng dụng Prompt nâng cao","ten":"Phân loại rủi ro và phòng tránh vi phạm khi dùng AI","ma":["11.B2.1"],"y":"Nhận diện, phân loại các rủi ro dẫn đến vi phạm quy định nhà trường hoặc pháp luật (xâm phạm bản quyền, lộ bí mật).","h":"Thực hành thiết lập Ma trận rủi ro (độ nghiêm trọng × khả năng xảy ra) cho các trường hợp học sinh dùng AI trong học đường; đề xuất biện pháp phòng ngừa.","s":"Ma trận đánh giá rủi ro công nghệ AI kèm kế hoạch ứng phó sự cố.","lab":"Ma trận rủi ro học đường"},{"g":11,"t":5,"cd":"Quản trị rủi ro và Ứng dụng Prompt nâng cao","ten":"Một số ứng dụng AI trong học tập","ma":["11.C2.1","11.C2.2"],"y":"Trình bày cách AI hỗ trợ học tập và đề xuất ý tưởng về các tính năng AI mới phục vụ học đường.","h":"Hoạt động nhóm khảo sát các cách dùng AI hỗ trợ tự học; đóng vai nhóm thiết kế sản phẩm giáo dục (EdTech) phác thảo ý tưởng về một tính năng/công cụ \"Trợ lý học tập thông minh\" hỗ trợ một môn học cụ thể (mục tiêu, tính năng chính, luồng sử dụng).","s":"Bản mô tả tính năng sản phẩm; Sơ đồ luồng sử dụng của học sinh.","lab":"Thiết kế trợ lý học tập"},{"g":11,"t":6,"cd":"Quản trị rủi ro và Ứng dụng Prompt nâng cao","ten":"Kỹ thuật Prompt nâng cao","ma":["11.C3.1"],"y":"Làm chủ kỹ thuật prompt nâng cao: ràng buộc định dạng đầu ra và chia nhỏ bài toán phức hợp.","h":"Thực hành viết và cải tiến prompt nâng cao bằng cách quy định rõ định dạng đầu ra (bảng, danh sách, dàn ý, JSON…) và chia một nhiệm vụ phức hợp thành các nhiệm vụ nhỏ để AI xử lý lần lượt.","s":"Bộ prompt hoàn chỉnh và kết quả đầu ra do AI tạo ra để giải quyết một tình huống thực tế trong học tập.","lab":"Prompt nâng cao"},{"g":11,"t":7,"cd":"Công nghệ cốt lõi và Thuật toán AI","ten":"Khám phá công nghệ NLP, Thị giác máy tính và Cảm biến","ma":["11.C3.2"],"y":"Mô tả cách thức hoạt động cơ bản của công nghệ nhận diện giọng nói/văn bản (NLP), xử lý ảnh (Vision) và cảm biến.","h":"Trải nghiệm trực quan các công cụ demo AI trên web; vẽ sơ đồ phân rã công nghệ bóc tách 3 khối: Đầu vào cảm biến -> Khối xử lý -> Đầu ra nhận dạng.","s":"Bảng / Sơ đồ phân tích công nghệ AI cho 3 ứng dụng thực tế.","lab":"Đầu vào, xử lý, đầu ra"},{"g":11,"t":8,"cd":"Công nghệ cốt lõi và Thuật toán AI","ten":"Khái niệm và ứng dụng Mạng nơ-ron nhân tạo (ANN)","ma":["11.C5.1"],"y":"Nêu kiến thức căn bản về mạng nơ-ron nhân tạo (lớp đầu vào, lớp ẩn, lớp đầu ra) và các ứng dụng thực tế.","h":"Quan sát và tương tác trên nền tảng mô phỏng mạng nơ-ron (như TensorFlow Playground); ghi nhận cách mô hình điều chỉnh để phân tách dữ liệu.","s":"Phiếu ghi chép thực nghiệm tham số mạng nơ-ron; Sơ đồ cấu trúc 3 tầng của ANN.","lab":"Mạng nơ-ron nhìn từ bên trong"},{"g":11,"t":9,"cd":"Công nghệ cốt lõi và Thuật toán AI","ten":"Thuật toán học máy: Phân lớp và Phân cụm","ma":["11.C5.2"],"y":"Nêu được khái niệm và ứng dụng thực tiễn của thuật toán phân lớp (học có giám sát) và phân cụm (học không giám sát).","h":"Giải quyết tình huống minh họa: Phân biệt bản chất bài toán 'Gán nhãn' (lọc email rác, nhận diện bệnh cây trồng) và bài toán 'Tìm nhóm' (gợi ý sở thích, phân nhóm khách hàng).","s":"Bảng phân loại và so sánh bài toán Phân lớp vs Phân cụm kèm ví dụ thực tế.","lab":"Gán nhãn hay tìm nhóm?"},{"g":11,"t":10,"cd":"Thiết kế và Vận hành tổng thể hệ thống AI","ten":"Thiết kế tổng thể hệ thống AI","ma":["11.D1.1"],"y":"Trình bày cách thiết kế tổng thể một hệ thống AI; thể hiện mối liên hệ tương hỗ giữa mục tiêu, dữ liệu và mô hình.","h":"Làm việc nhóm: Thiết kế bản vẽ kiến trúc tổng thể cho một hệ thống AI phục vụ học đường hoặc cộng đồng (như hệ thống giám sát phân loại rác).","s":"Bản vẽ sơ đồ kiến trúc tổng thể hệ thống AI; Bản thuyết minh kỹ thuật luồng dữ liệu.","lab":"Bản vẽ kiến trúc hệ thống AI"},{"g":11,"t":11,"cd":"Thiết kế và Vận hành tổng thể hệ thống AI","ten":"Cơ chế vận hành công nghệ trong hệ thống AI","ma":["11.D2.1"],"y":"Trình bày cách thức vận hành của công nghệ trong hệ thống, cách các thành phần phối hợp để hoàn thành nhiệm vụ.","h":"Phân tích cơ chế phối hợp thời gian thực: Cảm biến thu thập -> Thuật toán xử lý -> Cơ cấu chấp hành điều khiển; xác định các điểm nghẽn (bottleneck).","s":"Sơ đồ luồng vận hành công nghệ thời gian thực của hệ thống.","lab":"Mô phỏng thời gian thực"},{"g":11,"t":12,"cd":"Thiết kế và Vận hành tổng thể hệ thống AI","ten":"Báo cáo hồ sơ thiết kế hệ thống AI và Đánh giá tổng kết","ma":["Tổng hợp"],"y":"Báo cáo hồ sơ thiết kế; giải trình quy trình an toàn, tính khả thi công nghệ và đạo đức dữ liệu.","h":"Thuyết trình bảo vệ hồ sơ thiết kế hệ thống; tiếp thu ý kiến phản biện từ giáo viên và nhóm bạn để hoàn thiện phiên bản cải tiến.","s":"Hồ sơ thiết kế kỹ thuật hoàn chỉnh (bản cải tiến); Phiếu đánh giá đồng đẳng.","lab":"Hồ sơ thiết kế và đánh giá đồng đẳng"},{"g":12,"t":1,"cd":"Kiểm soát con người và Trách nhiệm giải trình","ten":"Quyền kiểm soát của con người trong vòng đời AI","ma":["12.A1.1"],"y":"Phân tích hệ thống AI để bảo đảm con người có quyền kiểm soát và chịu trách nhiệm ở các bước quan trọng trong vòng đời.","h":"Lập sơ đồ toàn diện vòng đời AI (từ thu thập dữ liệu, huấn luyện, kiểm thử đến triển khai); đánh dấu các chốt chặn bắt buộc con người phê duyệt.","s":"Sơ đồ vòng đời AI có gắn nhãn điểm kiểm soát của con người.","lab":"Vòng đời AI và chốt chặn con người"},{"g":12,"t":2,"cd":"Kiểm soát con người và Trách nhiệm giải trình","ten":"Con người và AI trong quá trình ra quyết định","ma":["12.A1.2"],"y":"Phân tích vai trò của con người và AI trong các bước chính của quá trình ra quyết định.","h":"Nghiên cứu tình huống giả định (xét tuyển học bổng, sàng lọc y tế); đóng vai hội đồng chuyên môn phân định quyền tham mưu của AI và quyền quyết định tối hậu của con người.","s":"Bảng phân tích vai trò ra quyết định Người – AI.","lab":"Hội đồng xét học bổng"},{"g":12,"t":3,"cd":"Kiểm soát con người và Trách nhiệm giải trình","ten":"Thực hiện trách nhiệm giải trình","ma":["12.A1.3"],"y":"Kiểm tra trách nhiệm giải trình của con người đối với quyết định có AI hỗ trợ theo pháp luật và quy định hiện hành.","h":"Đánh giá một quy trình xử lý sự cố giả định theo câu hỏi 3 bên: 'Ai quyết định? Ai kiểm tra? Ai chịu trách nhiệm pháp lý?'.","s":"Phiếu kiểm tra trách nhiệm giải trình sự cố thuật toán.","lab":"Ai quyết định, ai kiểm tra, ai chịu trách nhiệm?"},{"g":12,"t":4,"cd":"Đạo đức thiết kế, Công dân số và Quản trị rủi ro","ten":"Nguyên tắc đạo đức khi thiết kế sản phẩm AI","ma":["12.A2.1"],"y":"Nắm vững 6 nguyên tắc cơ bản: An toàn, công bằng, minh bạch, quyền riêng tư, trách nhiệm, lợi ích xã hội.","h":"Vận dụng bộ 6 nguyên tắc để thẩm định, chấm điểm một sản phẩm AI thực tế hoặc một ý tưởng công nghệ của nhóm.","s":"Bảng Rubric thẩm định đạo đức thiết kế hệ thống AI.","lab":"Chấm đạo đức bằng 6 nguyên tắc"},{"g":12,"t":5,"cd":"Đạo đức thiết kế, Công dân số và Quản trị rủi ro","ten":"Trách nhiệm công dân trong xã hội có AI","ma":["12.A3.1"],"y":"Phân tích trách nhiệm công dân: dùng AI an toàn, trung thực, tôn trọng bản quyền, chống tin giả, bảo vệ dữ liệu.","h":"Tranh biện học đường về liêm chính học thuật và vấn nạn Deepfake; soạn thảo quy ước văn hóa công nghệ của nhóm.","s":"Bộ quy tắc ứng xử công dân số ngắn gọn của nhóm.","lab":"Công dân số trước Deepfake và tin giả"},{"g":12,"t":6,"cd":"Đạo đức thiết kế, Công dân số và Quản trị rủi ro","ten":"Đánh giá mức độ rủi ro và Trách nhiệm trong hệ sinh thái AI","ma":["12.B2.1","12.B3.1"],"y":"Xác định mức độ rủi ro dẫn đến vi phạm pháp luật; quyền, trách nhiệm của nhà phát triển, người dùng và vai trò cá nhân.","h":"Thiết lập ma trận rủi ro công nghệ; mô phỏng phiên họp hội đồng các bên liên quan (nhà trường, học sinh, nhà phát triển) để giải quyết xung đột lợi ích.","s":"Ma trận đánh giá rủi ro; Biên bản ghi nhận quan điểm các bên liên quan.","lab":"Hội đồng các bên liên quan"},{"g":12,"t":7,"cd":"Công cụ phát triển mở và Đánh giá hiệu năng","ten":"Lựa chọn ý tưởng giải pháp AI phục vụ học tập và xã hội","ma":["12.C2.1"],"y":"Lựa chọn và mô tả ý tưởng thiết kế một công cụ AI hỗ trợ giải quyết bài toán thiết thực trong học đường hoặc cộng đồng (nông nghiệp, dịch vụ, hỗ trợ người yếu thế, …).","h":"Làm việc nhóm: Khảo sát bài toán thực tế (hỗ trợ nhóm yếu thế, bảo tồn văn hóa, tối ưu năng lượng); viết bản đề xuất ý tưởng giải pháp AI.","s":"Phiếu đề xuất ý tưởng dự án AI (AI Solution Proposal).","lab":"Khung đề xuất giải pháp AI"},{"g":12,"t":8,"cd":"Công cụ phát triển mở và Đánh giá hiệu năng","ten":"Khảo sát các công cụ phát triển AI mã nguồn mở/miễn phí","ma":["12.C3.1"],"y":"Nhận biết và khảo sát các công cụ mã nguồn mở/miễn phí: Teachable Machine, ML5.js, TensorFlow.js, MIT App Inventor.","h":"Khảo sát trực tiếp tại phòng máy; thử nghiệm nạp mẫu và trải nghiệm thao tác huấn luyện cơ bản trên nền tảng mở không thu thập dữ liệu cá nhân hoặc dữ liệu nhạy cảm.","s":"Bảng so sánh kỹ thuật các công cụ phát triển AI mã nguồn mở / miễn phí.","lab":"Huấn luyện nhanh với Teachable Machine"},{"g":12,"t":9,"cd":"Công cụ phát triển mở và Đánh giá hiệu năng","ten":"Phương pháp kiểm thử, đánh giá hiệu quả của hệ thống AI","ma":["12.C3.2"],"y":"Thiết lập các tiêu chí đánh giá hiệu năng: Độ chính xác (Accuracy), độ tin cậy, độ trễ và trải nghiệm; phân tích hiện tượng quá khớp (Overfitting).","h":"Xây dựng bộ tiêu chí kiểm thử; nạp tập dữ liệu kiểm tra độc lập (Test dataset) vào mô hình để đo lường độ chính xác, lập bảng thống kê các trường hợp AI nhận diện sai.","s":"Bộ tiêu chí đánh giá; Biên bản kết quả kiểm thử mô hình.","lab":"Tập kiểm tra độc lập và overfitting"},{"g":12,"t":10,"cd":"Dự án AI vì cộng đồng và Hướng nghiệp tương lai","ten":"Lựa chọn phương án thiết kế và vận hành hệ thống AI","ma":["12.D1.1"],"y":"Nhận biết, phân tích các phương án thiết kế/vận hành phù hợp để đạt hiệu quả cao trong nhiệm vụ cụ thể.","h":"Phân tích bài toán đánh đổi (Trade-off): So sánh 2–3 phương án kỹ thuật theo mục tiêu, nguồn dữ liệu sẵn có, tài nguyên phần cứng, chi phí và rủi ro.","s":"Bảng so sánh phương án; Bản luận chứng lựa chọn giải pháp thiết kế tối ưu.","lab":"Bài toán đánh đổi"},{"g":12,"t":11,"cd":"Dự án AI vì cộng đồng và Hướng nghiệp tương lai","ten":"Mô phỏng phân vai hợp tác trong dự án phát triển AI","ma":["12.D2.1"],"y":"Nhận biết các vai trò đa chuyên môn (ý tưởng, dữ liệu, lập trình, kiểm thử, đạo đức) và yêu cầu hợp tác trong dự án.","h":"Mô phỏng cơ cấu nhóm dự án công nghệ: Phân vai chuyên môn cụ thể cho từng thành viên, lập kế hoạch tiến độ triển khai sản phẩm.","s":"Sơ đồ phân vai nhóm dự án; Kế hoạch tiến độ thực hiện ngắn gọn.","lab":"Đội dự án AI"},{"g":12,"t":12,"cd":"Dự án AI vì cộng đồng và Hướng nghiệp tương lai","ten":"Báo cáo dự án AI và Định hướng nghề nghiệp tương lai","ma":["Tổng hợp"],"y":"Báo cáo sản phẩm dự án (có phụ lục minh bạch AI); đánh giá biến động nghề nghiệp và chuẩn bị năng lực tương lai.","h":"Thuyết trình poster dự án tốt nghiệp AI (kèm bản khai báo minh bạch); làm bài khảo sát tự đánh giá năng lực cá nhân và định hướng nghề nghiệp số.","s":"Hồ sơ dự án tốt nghiệp AI hoàn chỉnh; Bản kế hoạch định hướng nghề nghiệp cá nhân.","lab":"Hồ sơ dự án và định hướng nghề nghiệp"}];
+const $=s=>document.querySelector(s);
+const st=(k,v)=>{try{if(v===undefined)return JSON.parse(localStorage.getItem(k));localStorage.setItem(k,JSON.stringify(v))}catch(e){return null}};
+const id=l=>`${l.g}-${String(l.t).padStart(2,"0")}`;
+const lst=t=>`<ul>${t.split(/;\s*/).filter(Boolean).map(x=>`<li>${x}</li>`).join("")}</ul>`;
+const rdy=(i,k)=>C.ready.includes(`${i}:${k}`);
+let g=+(st("g")||10),q="",open="",done=new Set(st("done")||[]);
 
-        <!-- SECTION: 12 TIẾT HỌC THEO KHUNG CHUẨN QĐ 2422 -->
-        <section id="chu-de" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="text-center mb-12">
-                <h3 class="text-2xl sm:text-3xl font-bold text-slate-900">Cấu Trúc Chương Trình 12 Tiết AI (QĐ 2422)</h3>
-                <p class="text-slate-600 mt-2">Phân chia khoa học theo các mạch kiến thức cốt lõi dành cho cấp THPT</p>
-            </div>
+function res(l){const i=id(l);
+ const a=k=>rdy(i,k)?`<a href="${P[k](i)}">${L[k]}</a>`:`<span class="off" title="Chưa có tài nguyên này">${L[k]} (sắp có)</span>`;
+ const lab=rdy(i,"lab")?`<a href="${P.lab(i)}">Lab: ${l.lab}</a>`:`<span class="off" title="Lab sẽ kết nối khi hoàn thiện">Lab: ${l.lab} (sắp có)</span>`;
+ return `<div class="act"><button class="pri" data-pv="${i}">Chiếu nội dung tiết</button>${a("bai")}${a("slide")}${a("phieu")}${lab}</div>`}
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Nhóm 1: Tiết 1 - 3 -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center font-bold text-lg mb-4">
-                            <i class="fa-solid fa-user-shield"></i>
-                        </div>
-                        <span class="text-xs font-semibold text-blue-600 uppercase tracking-wider">Tiết 1 - 3</span>
-                        <h4 class="font-bold text-lg text-slate-900 mt-1 mb-2">Kiểm Soát & Quản Trị Rủi Ro</h4>
-                        <p class="text-sm text-slate-600 mb-4">Xác định vai trò chủ động của con người, sự cần thiết kiểm soát AI và nhận diện rủi ro đối với cá nhân, xã hội[cite: 1].</p>
-                    </div>
-                    <a href="#phong-lab" class="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center space-x-1">
-                        <span>Xem phòng thực hành</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
+function row(l,flat){const i=id(l);
+ return `<div class="row" id="r${i}"><input type="checkbox" class="done" data-d="${i}" ${done.has(i)?"checked":""} aria-label="Đã dạy tiết ${l.t} khối ${l.g}">
+ <details data-i="${i}" ${open===i?"open":""}><summary><span class="no">${flat?l.g+"."+l.t:l.t}</span><span class="tt">${l.ten}</span><span class="codes">${l.ma.map(m=>`<b>${m}</b>`).join("")}</span></summary>
+ <div class="body"><h3>Yêu cầu cần đạt</h3><p>${l.y}</p><h3>Hoạt động gợi ý</h3>${lst(l.h)}<h3>Sản phẩm học tập</h3>${lst(l.s)}${res(l)}</div></details></div>`}
 
-                <!-- Nhóm 2: Tiết 4 - 6 -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center font-bold text-lg mb-4">
-                            <i class="fa-solid fa-scale-balanced"></i>
-                        </div>
-                        <span class="text-xs font-semibold text-purple-600 uppercase tracking-wider">Tiết 4 - 6</span>
-                        <h4 class="font-bold text-lg text-slate-900 mt-1 mb-2">Pháp Luật & Đạo Đức AI</h4>
-                        <p class="text-sm text-slate-600 mb-4">Luật an ninh mạng, bảo vệ dữ liệu cá nhân, xử lý tình huống vi phạm (Deepfake) và nguyên tắc đạo đức, thiên vị dữ liệu[cite: 1].</p>
-                    </div>
-                    <a href="#phong-lab" class="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center space-x-1">
-                        <span>Xem phòng thực hành</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
+function render(){
+ document.body.dataset.g=g;
+ $("#sub").textContent=`${C.ten} · năm học ${C.nam}`;
+ $("#tools").innerHTML=C.repo?`<a href="${C.repo}/generate">Nhân bản về trường</a><a href="${C.repo}/releases/latest">Tải gói offline</a>`:"";
+ $("#tabs").innerHTML=[10,11,12].map(k=>{const n=D.filter(l=>l.g==k&&done.has(id(l))).length;
+  return `<button data-g="${k}" aria-pressed="${!q&&g==k}" style="--t:var(--c${k})"><b>Khối ${k}</b><span>Đã dạy ${n}/12 tiết</span></button>`}).join("");
+ const m=$("#main");
+ if(q){const k=q.toLowerCase(),r=D.filter(l=>(l.ten+" "+l.ma.join(" ")+" "+l.h+" "+l.y+" "+l.lab).toLowerCase().includes(k));
+  m.innerHTML=r.length?`<p>${r.length} kết quả cho "${q.replace(/</g,"&lt;")}" (mọi khối)</p>`+r.map(l=>row(l,1)).join(""):`<p class="empty">Không tìm thấy. Thử mã như 10.C3.1 hoặc từ khóa như "prompt", "dữ liệu".</p>`;return}
+ let cd="",h="";D.filter(l=>l.g==g).forEach(l=>{if(l.cd!==cd){cd=l.cd;h+=`<h2 class="cd">${cd}</h2>`}h+=row(l)});
+ m.innerHTML=h}
 
-                <!-- Nhóm 3: Tiết 7 - 9 -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center font-bold text-lg mb-4">
-                            <i class="fa-solid fa-wand-magic-sparkles"></i>
-                        </div>
-                        <span class="text-xs font-semibold text-emerald-600 uppercase tracking-wider">Tiết 7 - 9</span>
-                        <h4 class="font-bold text-lg text-slate-900 mt-1 mb-2">Kỹ thuật Prompt & Ứng Dụng</h4>
-                        <p class="text-sm text-slate-600 mb-4">Khảo sát ứng dụng AI thực tế, làm chủ kỹ thuật đặt câu lệnh cấu trúc chuẩn và phân biệt AI tạo sinh với AI phân loại[cite: 1].</p>
-                    </div>
-                    <a href="#phong-lab" class="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center space-x-1">
-                        <span>Xem phòng thực hành</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
+/* Trình chiếu */
+let sl=[],si=0,lastF=null;
+function slides(l){const i=id(l);
+ return [`<p>Khối ${l.g} · Tiết ${l.t} · ${l.cd}</p><h1>${l.ten}</h1>`,
+ `<h2>Yêu cầu cần đạt</h2><div class="codes">${l.ma.map(m=>`<b>${m}</b>`).join("")}</div><p>${l.y}</p>`,
+ `<h2>Hoạt động</h2>${lst(l.h)}`,`<h2>Sản phẩm cần nộp</h2>${lst(l.s)}`,
+ `<h2>Thực hành</h2><p>${rdy(i,"lab")?`<a href="${P.lab(i)}" target="_blank" rel="noopener">Mở Lab: ${l.lab}</a>`:`Lab: ${l.lab} (chưa kết nối)`}</p>`]}
+function show(){$("#sl").innerHTML=sl[si];$("#pvn").textContent=`${si+1} / ${sl.length}`;$("#pvp").disabled=!si;$("#pvf").disabled=si==sl.length-1}
+function openPv(i){const l=D.find(x=>id(x)==i);sl=slides(l);si=0;lastF=document.activeElement;$("#pvt").textContent=`Khối ${l.g} · Tiết ${l.t}`;$("#pv").hidden=false;show();$("#pvx").focus()}
+function closePv(){$("#pv").hidden=true;lastF&&lastF.focus()}
+$("#pvx").onclick=closePv;$("#pvp").onclick=()=>{si>0&&(si--,show())};$("#pvf").onclick=()=>{si<sl.length-1&&(si++,show())};
+addEventListener("keydown",e=>{if($("#pv").hidden)return;if(e.key=="Escape")closePv();if(e.key=="ArrowRight"||e.key==" "){e.preventDefault();$("#pvf").click()}if(e.key=="ArrowLeft")$("#pvp").click()});
 
-                <!-- Nhóm 4: Tiết 10 - 12 -->
-                <div class="bg-white rounded-2xl p-6 shadow-sm border border-slate-200 hover:shadow-md transition flex flex-col justify-between">
-                    <div>
-                        <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center font-bold text-lg mb-4">
-                            <i class="fa-solid fa-network-wired"></i>
-                        </div>
-                        <span class="text-xs font-semibold text-amber-600 uppercase tracking-wider">Tiết 10 - 12</span>
-                        <h4 class="font-bold text-lg text-slate-900 mt-1 mb-2">Dữ Liệu & Thiết Kế Hệ Thống</h4>
-                        <p class="text-sm text-slate-600 mb-4">Tầm quan trọng của chất lượng dữ liệu huấn luyện, cấu trúc 5 thành phần hệ thống AI và báo cáo dự án tổng kết[cite: 1].</p>
-                    </div>
-                    <a href="#phong-lab" class="text-sm font-semibold text-indigo-600 hover:text-indigo-800 flex items-center space-x-1">
-                        <span>Xem phòng thực hành</span>
-                        <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
+/* Sự kiện */
+document.addEventListener("click",e=>{
+ const t=e.target.closest("[data-g]");if(t&&t.closest("#tabs")){g=+t.dataset.g;q="";$("#q").value="";st("g",g);render();scrollTo(0,0)}
+ const p=e.target.closest("[data-pv]");if(p)openPv(p.dataset.pv)});
+document.addEventListener("change",e=>{const d=e.target.dataset.d;if(d){e.target.checked?done.add(d):done.delete(d);st("done",[...done]);const b=document.querySelector(`#tabs [data-g="${d.split("-")[0]}"] span`);if(b)b.textContent=`Đã dạy ${D.filter(l=>l.g==d.split("-")[0]&&done.has(id(l))).length}/12 tiết`}});
+document.addEventListener("toggle",e=>{const d=e.target;if(d.tagName=="DETAILS"&&d.open){open=d.dataset.i;history.replaceState(null,"","#"+open)}},true);
+$("#q").addEventListener("input",e=>{q=e.target.value.trim();render()});
 
-        <!-- SECTION: PHÒNG LAB HUGGING FACE SPACES (NHÚNG TRỰC TIẾP) -->
-        <section id="phong-lab" class="bg-slate-100 py-16 border-t border-slate-200">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-10">
-                    <span class="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">Phòng thực hành số trực quan</span>
-                    <h3 class="text-2xl sm:text-3xl font-bold text-slate-900 mt-2">Phòng Lab AI Trên Đám Mây (Hugging Face Spaces)</h3>
-                    <p class="text-slate-600 mt-1">Học sinh tương tác trực tiếp, tinh chỉnh tham số và trải nghiệm mô hình AI ngay trên trình duyệt</p>
-                </div>
-
-                <!-- Khung nhúng ứng dụng Hugging Face Space (iframe) -->
-                <div class="bg-white rounded-2xl shadow-md border border-slate-200 overflow-hidden">
-                    <div class="bg-slate-900 text-white px-6 py-3 flex items-center justify-between">
-                        <div class="flex items-center space-x-2">
-                            <div class="w-3 h-3 bg-red-500 rounded-full"></div>
-                            <div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
-                            <div class="w-3 h-3 bg-green-500 rounded-full"></div>
-                            <span class="text-xs text-slate-400 ml-2">| Khung hiển thị: Ứng dụng Streamlit / Gradio mô phỏng AI</span>
-                        </div>
-                        <span class="text-xs bg-emerald-500 text-white px-2 py-0.5 rounded font-medium">Đang sẵn sàng kết nối</span>
-                    </div>
-                    
-                    <!-- Vùng nhúng iframe Hugging Face Space -->
-                    <div class="p-4 bg-slate-50 min-h-[500px] flex flex-col items-center justify-center text-center">
-                        <!-- Lưu ý: Thay thế đường dẫn src của iframe bên dưới bằng link nhúng Space thực tế của bạn -->
-                        <div class="w-full h-[550px] border-0 rounded-lg overflow-hidden shadow-inner bg-white flex flex-col items-center justify-center p-6">
-                            <div class="text-indigo-600 text-5xl mb-4">
-                                <i class="fa-solid fa-cloud-arrow-up animate-bounce"></i>
-                            </div>
-                            <h4 class="text-xl font-bold text-slate-800 mb-2">Khu Vực Tích Hợp Ứng Dụng AI Trực Quan</h4>
-                            <p class="text-slate-600 max-w-lg text-sm mb-6">
-                                Khi bạn phát triển xong app trên Hugging Face Spaces (ví dụ: Phân tích cảm xúc văn bản hoặc Nhận diện hình ảnh), hãy nhúng thẻ <code>&lt;iframe&gt;</code> vào đây để học sinh tương tác trực tiếp mà không cần chuyển tab.
-                            </p>
-                            <div class="bg-indigo-50 border border-indigo-200 text-indigo-800 text-xs p-4 rounded-xl text-left max-w-lg">
-                                <p class="font-bold mb-1"><i class="fa-solid fa-lightbulb"></i> Hướng dẫn kỹ thuật:</p>
-                                <p>Vào Space của bạn trên Hugging Face -> Nhấp vào icon <code>...</code> -> Chọn <code>Embed this space</code> -> Copy mã iframe và dán thay thế khu vực này.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION: TÀI LIỆU & SKKN -->
-        <section id="tai-lieu" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div class="bg-indigo-900 text-white rounded-3xl p-8 sm:p-12 shadow-xl flex flex-col md:flex-row items-center justify-between">
-                <div class="mb-6 md:mb-0 md:mr-8">
-                    <h3 class="text-2xl sm:text-3xl font-bold mb-3">Hồ Sơ Sáng Kiến Kinh Nghiệm & Tài Nguyên Giảng Dạy</h3>
-                    <p class="text-indigo-200 text-sm sm:text-base max-w-xl">
-                        Cung cấp đầy đủ báo cáo SKKN, phân phối chương trình 12 tiết chuẩn QĐ 2422, hệ thống mã QR chuyển giao và bộ mã nguồn ứng dụng mẫu cho giáo viên THPT.
-                    </p>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-3 w-full md:w-auto">
-                    <button onclick="alert('Đã tải xuống gói tài liệu SKKN và mã nguồn trọn bộ thành công!')" class="bg-white text-indigo-900 font-bold px-6 py-3 rounded-xl hover:bg-indigo-50 transition shadow-md flex items-center justify-center space-x-2">
-                        <i class="fa-solid fa-download"></i>
-                        <span>Tải Trọn Bộ (ZIP)</span>
-                    </button>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 text-sm">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between">
-            <p>&copy; 2026 AI-Learning Hub. Trường THPT chuyên Bình Long. Phát triển bởi GV Lê Minh Sang.</p>
-            <div class="flex space-x-6 mt-4 sm:mt-0">
-                <a href="https://github.com" target="_blank" class="hover:text-white transition"><i class="fa-brands fa-github"></i> GitHub Pages</a>
-                <a href="https://cblit.id.vn" target="_blank" class="hover:text-white transition"><i class="fa-solid fa-globe"></i> cblit.id.vn</a>
-            </div>
-        </div>
-    </footer>
-
+/* Mở đúng tiết theo liên kết #10-03 hoặc #11 */
+const h=location.hash.slice(1);
+if(/^1[012]-\d\d$/.test(h)){g=+h.slice(0,2);open=h}else if(/^1[012]$/.test(h))g=+h;
+render();
+if(open){const r=document.getElementById("r"+open);r&&r.scrollIntoView()}
+</script>
 </body>
 </html>
