@@ -3,7 +3,7 @@ const $=s=>document.querySelector(s),S=[...document.querySelectorAll('.s')];
 let i=0,k=0;
 const M=S.map(s=>+s.dataset.m||0),T=M.reduce((a,b)=>a+b,0),St=M.map((_,j)=>M.slice(0,j).reduce((a,b)=>a+b,0));
 const hud=document.createElement('div');hud.id='hud';
-hud.innerHTML=`<a href="${document.body.dataset.home||'../../index.html'}">Trung tâm</a><span id="inf"></span><span class="sp"></span><button id="bn" title="Phím N">Ghi chú</button><button id="bf" title="Phím F">Toàn màn hình</button><button id="bp">Trước</button><span id="no"></span><button id="bx">Sau</button>`;
+hud.innerHTML=`<a href="${document.body.dataset.home||'../index.html'}">Trung tâm</a><span id="inf"></span><span class="sp"></span><button id="bn" title="Phím N">Ghi chú</button><button id="bf" title="Phím F">Toàn màn hình</button><button id="bp">Trước</button><span id="no"></span><button id="bx">Sau</button>`;
 document.body.append(hud);
 const bar=document.createElement('div');bar.id='bar';document.body.append(bar);
 const np=document.createElement('div');np.id='np';document.body.append(np);
