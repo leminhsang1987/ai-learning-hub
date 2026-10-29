@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 10, Tiết 10: Tầm quan trọng của chất lượng dữ liệu huấn luyện</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#10-10">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 10 · Tiết 10/12 · 10.C4.1</span>
+ <h1 style="margin-top:90px">Tầm quan trọng của chất lượng dữ liệu huấn luyện</h1>
+ <p class="big mute" style="">Dữ liệu rác, kết quả rác</p>
+ <aside>Nhắc lại tiết 6 (thiên vị dữ liệu) và tiết 9 (AI học từ dữ liệu). Chia nhóm 4–5 học sinh.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Phân tích ảnh hưởng của <b>chuẩn xác, đầy đủ, công bằng</b> của dữ liệu đến kết quả AI.</li><li>Chỉ ra lỗi trong một bộ dữ liệu mẫu và <b>đề xuất cách làm sạch</b>.</li></ul>
+ <aside>YCCĐ 10.C4.1 (mở rộng 10.C4.MR1). Sản phẩm: Báo cáo đánh giá chất lượng bộ dữ liệu mẫu; Phiếu ghi nhận lỗi nhãn dữ liệu.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Dạy máy phân biệt mèo và chó</h2> <p class="big" style="">Có 30% ảnh bị gắn <b>nhầm nhãn</b>. Máy sẽ học ra sao?</p> <div class="rv f"><span>A. Vẫn giỏi bình thường</span></div> <div class="rv f"><span>B. Nhầm lẫn lặp lại</span></div> <div class="rv f"><span>C. Tự phát hiện và sửa lỗi</span><br><span class="a">Máy học đúng những gì được dạy: dữ liệu sai thì kết quả sai.</span></div>
+ <aside>Giơ tay A/B/C rồi bấm hiện câu dẫn. Giới thiệu câu 'Dữ liệu rác tạo kết quả rác'.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="5">
+ <span class="ph">Kiến thức · 5 phút</span>
+ <h2>Ba tiêu chí dữ liệu tốt</h2> <div class="cols" style="grid-template-columns:repeat(3,1fr)"><div class="card f"><b class="k">Chuẩn xác</b>Nhãn và giá trị đúng.<p class="sm mute" style="margin:8px 0 0">Ảnh mèo phải gắn nhãn mèo.</p></div><div class="card f"><b class="k">Đầy đủ</b>Đủ số lượng, đủ nhóm và tình huống.<p class="sm mute" style="margin:8px 0 0">Có cả ảnh ban ngày và ban đêm.</p></div><div class="card f"><b class="k">Công bằng</b>Đại diện các nhóm, không lệch.<p class="sm mute" style="margin:8px 0 0">Không chỉ có một giống, một vùng.</p></div></div> <p class="f big" style="margin:12px 0 0">Thiếu một tiêu chí thì AI học <b>lệch</b>.</p>
+ <aside>Mỗi tiêu chí 1,5 phút kèm ví dụ. Nối với thiên vị dữ liệu ở tiết 6.</aside>
+</section>
+
+<section class="s" data-p="Mở rộng" data-m="3">
+ <span class="ph">Mở rộng · 3 phút · 10.C4.MR1</span>
+ <h2>Các dạng dữ liệu huấn luyện</h2> <table><tr><th>Dạng</th><th>Ví dụ</th><th>Lỗi thường gặp</th></tr><tr><td>Hình ảnh</td><td>Ảnh lá cây</td><td>Mờ, thiếu sáng, gắn nhãn sai</td></tr><tr><td>Âm thanh</td><td>Giọng nói</td><td>Ồn, thiếu giọng vùng miền</td></tr><tr><td>Văn bản</td><td>Bài viết, tin nhắn</td><td>Sai chính tả, định kiến</td></tr><tr><td>Số liệu</td><td>Bảng điểm, cảm biến</td><td>Thiếu ô, nhập sai</td></tr></table>
+ <aside>Phần mở rộng, có thể rút gọn. Hỏi học sinh cho thêm ví dụ lỗi cho mỗi dạng.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Quan sát · 4 phút</span>
+ <h2>Bộ dữ liệu mẫu: ảnh lá cây</h2> <table><tr><th>Mẫu</th><th>Mô tả ảnh</th><th>Nhãn</th></tr><tr><td>1</td><td>Lá xanh bình thường</td><td>Khỏe</td></tr><tr><td>2</td><td>Lá có đốm nâu</td><td>Khỏe</td></tr><tr><td>3</td><td>Lá xanh bình thường</td><td>Bệnh</td></tr><tr><td>4</td><td>Ảnh rất mờ</td><td>Bệnh</td></tr><tr><td>5</td><td>Lá có đốm nâu</td><td>Bệnh</td></tr><tr><td>6</td><td>Giống hệt mẫu 5</td><td>Bệnh</td></tr><tr><td>7–10</td><td>Lá xanh bình thường</td><td>Khỏe</td></tr></table>
+ <aside>Đây là bộ dữ liệu giả định. Cho học sinh quan sát 1 phút, chưa nêu đáp án. Đáp án ở slide báo cáo.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: kiểm tra chất lượng dữ liệu</h2> <ul class="big"><li>Tìm các <b>lỗi</b> trong bảng (nhãn, ảnh, trùng, thiếu nhóm).</li><li>Ghi vào <b>Phiếu ghi nhận lỗi</b>: mẫu nào, lỗi gì, cách sửa.</li><li>Đánh giá bộ dữ liệu theo 3 tiêu chí: <b>chuẩn xác, đầy đủ, công bằng</b> (Đạt hoặc Chưa đạt).</li></ul>
+ <aside>Phát phiếu in. Có thể dùng Lab 'Dữ liệu rác, kết quả rác' khi đã kết nối để học sinh sửa nhãn và xem độ chính xác thay đổi.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="12">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian làm việc nhóm</h2> <button class="timer" data-timer="720"><span class="tm">12:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–5:</b> tìm lỗi, ghi Phiếu</li><li><b>Phút 6–9:</b> đề xuất cách làm sạch</li><li><b>Phút 10–12:</b> đánh giá 3 tiêu chí, chuẩn bị báo cáo</li></ul>
+ <aside>Đi các nhóm hỏi: 'Nếu dùng bộ này huấn luyện, máy sẽ nhầm ở đâu?'.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="8">
+ <span class="ph">Báo cáo · 8 phút</span>
+ <h2>Đối chiếu kết quả</h2> <table><tr><th>Mẫu</th><th>Lỗi</th><th>Cách làm sạch</th></tr><tr><td>2, 3</td><td>Nhãn sai</td><td>Người xem lại và sửa nhãn</td></tr><tr><td>4</td><td>Ảnh mờ</td><td>Loại bỏ hoặc chụp lại</td></tr><tr><td>5, 6</td><td>Trùng lặp</td><td>Giữ một bản</td></tr><tr><td>Cả bộ</td><td>Thiếu mẫu bệnh, lệch về nhóm khỏe</td><td>Bổ sung ảnh lá bệnh đa dạng</td></tr></table> <p class="sm" style="margin-top:12px">Mỗi nhóm đối chiếu và nêu một điểm nhóm bỏ sót.</p>
+ <aside>Cho 2–3 nhóm báo cáo trước khi chiếu đáp án (bấm tiếp slide). Khen nhóm phát hiện cả lỗi 'thiếu nhóm' không chỉ lỗi nhãn.</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="4">
+ <span class="ph">Củng cố · 4 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Ảnh mèo bị gắn nhãn chó: thiếu tiêu chí nào?</span><br><span class="a">Chuẩn xác.</span></div> <div class="rv"><span>2. Bộ ảnh chỉ có ban ngày: thiếu tiêu chí nào?</span><br><span class="a">Đầy đủ.</span></div> <div class="rv"><span>3. Bộ dữ liệu chỉ lấy từ một nhóm người: thiếu tiêu chí nào?</span><br><span class="a">Công bằng.</span></div> <div class="rv"><span>4. Đúng hay sai: máy tự phát hiện và sửa được dữ liệu sai.</span><br><span class="a">Sai. Cần con người kiểm tra, làm sạch.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li>Dữ liệu cần <b>chuẩn xác, đầy đủ, công bằng.</b></li><li><b>Dữ liệu rác tạo kết quả rác</b>: con người làm sạch dữ liệu.</li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Báo cáo đánh giá chất lượng dữ liệu · Phiếu ghi nhận lỗi nhãn.<br><b>Tiết sau: "Cấu trúc cơ bản và Vấn đề phát sinh của hệ thống AI" (Tiết 11, 10.D1.1). Chuẩn bị: nghĩ một ý tưởng AI giải quyết việc ở trường hoặc địa phương.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>

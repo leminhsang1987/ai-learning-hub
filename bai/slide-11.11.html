@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 11, Tiết 11: Cơ chế vận hành công nghệ trong hệ thống AI</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#11-11">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 11 · Tiết 11/12 · 11.D2.1</span>
+ <h1 style="margin-top:90px">Cơ chế vận hành công nghệ trong hệ thống AI</h1>
+ <p class="big mute" style="">Hệ thống chạy thế nào trong thời gian thực?</p>
+ <aside>Nhắc lại tiết 10 (bản vẽ kiến trúc). Hôm nay nhìn vào tốc độ phối hợp giữa các khâu. Chia nhóm 4–5 học sinh; chuẩn bị máy tính cầm tay hoặc dùng điện thoại để tính.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Trình bày cách <b>cảm biến, thuật toán, cơ cấu chấp hành</b> phối hợp theo thời gian thực.</li><li>Tìm <b>điểm nghẽn</b> trong một luồng vận hành.</li><li>Đề xuất cách <b>tối ưu</b> cho hệ thống.</li></ul>
+ <aside>YCCĐ 11.D2.1 (mở rộng 11.D2.MR1). Sản phẩm: Sơ đồ luồng vận hành công nghệ thời gian thực của hệ thống.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Băng chuyền chạy nhanh gấp đôi</h2> <p class="big" style="">Băng chuyền phân loại rác tăng tốc gấp đôi. Điều gì có thể xảy ra?</p> <div class="rv f"><span>Thuật toán xử lý không kịp</span></div> <div class="rv f"><span>Tay gạt hoạt động chậm hơn tốc độ băng chuyền</span></div> <p class="f" style="font-size:28px;margin:12px 0 0">Mỗi khâu có <b>tốc độ riêng</b>; khâu chậm nhất quyết định cả hệ thống.</p>
+ <aside>Cho học sinh nêu giả thuyết. Dẫn dắt vào khái niệm điểm nghẽn.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="5">
+ <span class="ph">Kiến thức · 5 phút</span>
+ <h2>Ba khâu phối hợp thời gian thực</h2> <div class="cols" style="grid-template-columns:repeat(3,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Cảm biến thu thập</b>Camera, cảm biến đo, đưa dữ liệu vào.</div><div class="card f sm"><b class="k" style="font-size:30px">Thuật toán xử lý</b>Mô hình nhận dạng và ra quyết định.</div><div class="card f sm"><b class="k" style="font-size:30px">Cơ cấu chấp hành</b>Tay gạt, động cơ, đèn, còi thực hiện.</div></div> <p class="f big" style="margin:14px 0 0"><b>Độ trễ</b> là thời gian từ lúc đo đến lúc hành động.</p>
+ <aside>Nối với tiết 7 (đầu vào, xử lý, đầu ra) và tiết 9 khối 12 (độ trễ là một tiêu chí hiệu năng).</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Làm mẫu · 4 phút</span>
+ <h2>Thời gian từng khâu (số liệu giả định)</h2> <table><tr><th>Khâu</th><th>Việc</th><th>Thời gian</th></tr><tr><td>Cảm biến</td><td>Chụp ảnh vật thể</td><td>0,05 s</td></tr><tr><td>Tiền xử lý</td><td>Cắt, chỉnh sáng</td><td>0,05 s</td></tr><tr><td>Mô hình</td><td>Nhận dạng loại rác</td><td>0,30 s</td></tr><tr><td>Truyền lệnh</td><td>Gửi tới tay gạt</td><td>0,05 s</td></tr><tr><td>Cơ cấu gạt</td><td>Gạt vật vào thùng</td><td>0,35 s</td></tr><tr><td><b>Tổng</b></td><td></td><td><b>0,80 s</b></td></tr></table>
+ <aside>Số liệu giả định. Vật di chuyển tới vị trí gạt sau 1,0 s ở tốc độ thường nên còn dư 0,2 s.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="3">
+ <span class="ph">Điểm nghẽn · 3 phút</span>
+ <h2>Điểm nghẽn (bottleneck)</h2> <ul class="big"><li>Khâu <b>chậm nhất</b> hoặc chiếm nhiều thời gian nhất.</li><li>Trong ví dụ: <b>cơ cấu gạt (0,35 s)</b> và <b>mô hình (0,30 s)</b>.</li></ul> <p class="f big" style="margin-top:12px">Nguyên tắc: <b>đo trước, sửa sau</b>.</p>
+ <aside>Nhấn mạnh tối ưu khâu không phải điểm nghẽn thì không cải thiện được nhiều.</aside>
+</section>
+
+<section class="s" data-p="Mở rộng" data-m="3">
+ <span class="ph">Tính thử · 3 phút · 11.D2.MR1</span>
+ <h2>Băng chuyền tăng tốc: vật tới vị trí gạt sau 0,5 s</h2> <div class="rv"><span>Tổng thời gian hiện tại 0,80 s: chuyện gì xảy ra?</span><br><span class="a">Trễ 0,30 s: không kịp gạt.</span></div> <div class="rv"><span>Chỉ giảm mô hình còn 0,10 s thì sao?</span><br><span class="a">Tổng 0,60 s, vẫn lớn hơn 0,5 s.</span></div> <div class="rv"><span>Giảm mô hình còn 0,10 s và cơ cấu gạt còn 0,15 s?</span><br><span class="a">Tổng 0,40 s, kịp. Cần tối ưu cả hai khâu.</span></div>
+ <aside>Phần mở rộng. Cho học sinh tính trước khi bấm hiện đáp án. Các cách tối ưu khác: giảm tốc băng chuyền, dùng mô hình nhẹ hơn, đặt cảm biến sớm hơn.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: phân tích luồng vận hành</h2> <p class="sm" style="">Chọn: cổng ra vào tự động, đèn giao thông thông minh, phân loại sản phẩm trên băng chuyền, báo cháy.</p> <ul class="sm"><li>Vẽ sơ đồ <b>3 khâu</b> và ước tính <b>thời gian từng khâu</b> (giả định).</li><li>Tìm <b>điểm nghẽn</b>; đề xuất <b>2 cách tối ưu</b>.</li></ul>
+ <aside>Phát giấy A3. Có thể dùng Lab 'Mô phỏng thời gian thực' khi đã kết nối. Thời gian từng khâu là số giả định, không cần chính xác.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="11">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian làm việc nhóm</h2> <button class="timer" data-timer="660"><span class="tm">11:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–3:</b> chọn hệ thống, vẽ 3 khâu</li><li><b>Phút 4–8:</b> ước tính thời gian, tìm điểm nghẽn</li><li><b>Phút 9–11:</b> đề xuất cách tối ưu, tính lại</li></ul>
+ <aside>Đi các nhóm hỏi: 'Khâu nào chậm nhất? Sửa khâu đó thì tổng thời gian còn bao nhiêu?'.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="8">
+ <span class="ph">Báo cáo · 8 phút</span>
+ <h2>Chia sẻ sơ đồ vận hành</h2> <p class="sm" style="">Mỗi nhóm 1,5 phút; lớp hỏi 30 giây.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Nhóm nêu</b>Hệ thống · 3 khâu · điểm nghẽn · cách tối ưu.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp hỏi</b>Đã đo hay chỉ đoán? Cách tối ưu có đánh đổi gì?</div></div>
+ <aside>Chọn 4–5 nhóm. Nhắc: cách tối ưu thường có đánh đổi (độ chính xác, chi phí).</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="2">
+ <span class="ph">Củng cố · 2 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Điểm nghẽn là gì?</span><br><span class="a">Khâu chậm nhất, quyết định tốc độ cả hệ thống.</span></div> <div class="rv"><span>2. Độ trễ là gì?</span><br><span class="a">Thời gian từ lúc đo đến lúc hành động.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li>Ba khâu: <b>cảm biến, thuật toán, cơ cấu chấp hành.</b></li><li>Tìm <b>điểm nghẽn</b> trước khi tối ưu.</li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Sơ đồ luồng vận hành thời gian thực.<br><b>Tiết sau: "Báo cáo hồ sơ thiết kế hệ thống AI và Đánh giá tổng kết" (Tiết 12, Tổng hợp). Chuẩn bị: hoàn thiện hồ sơ thiết kế để bảo vệ trước lớp.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 12, Tiết 8: Khảo sát các công cụ phát triển AI mã nguồn mở/miễn phí</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#12-08">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 12 · Tiết 8/12 · 12.C3.1</span>
+ <h1 style="margin-top:90px">Khảo sát các công cụ phát triển AI mã nguồn mở/miễn phí</h1>
+ <p class="big mute" style="">Công cụ mở để tạo AI</p>
+ <aside>Nhắc lại tiết 7 (ý tưởng dự án). Hôm nay thử những công cụ có thể biến ý tưởng thành sản phẩm. Chuẩn bị phòng máy hoặc 1 máy mỗi nhóm; nếu không có máy, xem phương án ở ghi chú của slide Nhiệm vụ.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Nêu được <b>bốn công cụ</b> mã nguồn mở hoặc miễn phí để tạo AI.</li><li><b>Trải nghiệm</b> huấn luyện cơ bản với Teachable Machine.</li><li>Lập <b>bảng so sánh kỹ thuật</b> các công cụ.</li></ul>
+ <aside>YCCĐ 12.C3.1 (mở rộng 12.C3.MR1, 12.C4.MR1). Sản phẩm: Bảng so sánh kỹ thuật các công cụ phát triển AI mã nguồn mở hoặc miễn phí.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Làm AI phân loại rác trong vài phút?</h2> <p class="big" style="">Muốn tạo AI nhận diện <b>3 loại vật thể</b> trong lớp bằng camera, em cần gì?</p> <p class="f big" style="margin-top:10px">Có công cụ miễn phí giúp làm được <b>không cần viết mã</b>.</p>
+ <aside>Cho học sinh đoán: cần dữ liệu, cần thuật toán, cần mô hình (nhắc lại 5 thành phần ở khối 10). Dẫn vào công cụ.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="6">
+ <span class="ph">Kiến thức · 6 phút</span>
+ <h2>Bốn công cụ phổ biến</h2> <table><tr><th>Công cụ</th><th>Dạng</th><th>Dùng để</th><th>Cần mã?</th></tr><tr><td>Teachable Machine</td><td>Trang web, kéo thả</td><td>Huấn luyện nhận diện ảnh, âm thanh, tư thế</td><td>Không</td></tr><tr><td>ML5.js</td><td>Thư viện JavaScript</td><td>Dùng mô hình có sẵn trong trang web</td><td>Có (JavaScript)</td></tr><tr><td>TensorFlow.js</td><td>Thư viện JavaScript</td><td>Xây dựng, huấn luyện, chạy mô hình trên trình duyệt</td><td>Có (JavaScript)</td></tr><tr><td>MIT App Inventor</td><td>Kéo thả khối lệnh</td><td>Làm ứng dụng điện thoại, ghép mô hình</td><td>Ít (khối lệnh)</td></tr></table>
+ <aside>Mỗi công cụ khoảng 1,5 phút. Mô tả mức khái quát: kiểm tra trang chính thức của từng công cụ khi dùng vì tính năng và điều khoản có thể thay đổi.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Quy trình · 4 phút</span>
+ <h2>Quy trình huấn luyện cơ bản</h2> <ul class="big"><li><b>1. Thu thập:</b> chụp mẫu cho mỗi lớp.</li><li><b>2. Huấn luyện:</b> bấm nút để máy học.</li><li><b>3. Kiểm thử:</b> thử bằng mẫu mới chưa dùng để học.</li><li><b>4. Cải thiện:</b> thêm mẫu, sửa mẫu sai, huấn luyện lại.</li></ul>
+ <aside>Nối với tiết 10 khối 10 (chất lượng dữ liệu) và sẽ gặp lại ở tiết 9 (tập kiểm tra độc lập).</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="3">
+ <span class="ph">An toàn dữ liệu · 3 phút</span>
+ <h2>Dùng công cụ an toàn</h2> <ul class="big"><li><b>Không dùng ảnh khuôn mặt</b> hoặc dữ liệu cá nhân; dùng vật thể trong lớp.</li><li><b>Không lưu lên đám mây</b> nếu không cần.</li><li><b>Đọc điều khoản</b> và độ tuổi của công cụ.</li><li>Làm theo <b>hướng dẫn của giáo viên</b>.</li></ul>
+ <aside>Theo mô tả của công cụ, Teachable Machine thường xử lý ngay trên trình duyệt, nhưng cần kiểm tra các tùy chọn lưu, xuất mô hình và điều khoản hiện hành trước khi cho học sinh dùng. Chọn vật thể như bút, thước, lá cây.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: huấn luyện nhanh</h2> <ul class="sm"><li>Tạo <b>2–3 lớp vật thể</b> trong lớp, thu mẫu từ nhiều góc và ánh sáng.</li><li><b>Huấn luyện</b> rồi <b>thử với vật thể mới</b>; ghi kết quả.</li><li>Điền <b>bảng so sánh</b> bốn công cụ: độ dễ, cần mã, loại dữ liệu, giới hạn.</li></ul>
+ <aside>Nếu không có máy: nhóm đóng vai 'máy học' bằng thẻ ảnh có nhãn: một bạn là dữ liệu, một bạn là mô hình đưa ra quy tắc, kiểm thử bằng thẻ mới. Mở rộng: dùng công cụ để huấn luyện (12.C3.MR1).</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="12">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian thực hành</h2> <button class="timer" data-timer="720"><span class="tm">12:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–3:</b> mở công cụ, đặt tên các lớp</li><li><b>Phút 4–8:</b> thu mẫu, huấn luyện, thử mẫu mới</li><li><b>Phút 9–12:</b> điền bảng so sánh, ghi lại một lỗi</li></ul>
+ <aside>Đi các nhóm hỏi: 'Mẫu mới nhận đúng bao nhiêu trên số lần thử? Em đã thu mẫu ở những góc nào?'.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="6">
+ <span class="ph">Báo cáo · 6 phút</span>
+ <h2>Chia sẻ trải nghiệm</h2> <p class="sm" style="">Mỗi nhóm 1,5 phút: kết quả thử, một lỗi gặp phải, nhận xét về công cụ.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Nhóm nêu</b>Số lớp · số lần thử đúng · một lỗi · cách cải thiện.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp hỏi</b>Mẫu có đa dạng không? Công cụ nào hợp với dự án của nhóm?</div></div>
+ <aside>Chọn 4 nhóm. Ghi nhận cách cải thiện (thêm mẫu, đổi nền) làm nền cho tiết 9.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="3">
+ <span class="ph">Dữ liệu · 3 phút</span>
+ <h2>Thu thập và tổ chức dữ liệu</h2> <ul class="big"><li><b>Đa dạng:</b> nhiều góc, ánh sáng, nền.</li><li><b>Cân bằng:</b> số mẫu mỗi lớp gần nhau.</li><li><b>Đặt tên rõ:</b> lớp, tệp dễ tra cứu.</li></ul>
+ <aside>Phần mở rộng 12.C4.MR1: ghi lại cách tổ chức dữ liệu của nhóm vào Bảng so sánh. Nối với tiết 10 khối 10.</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="2">
+ <span class="ph">Củng cố · 2 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Công cụ nào kéo thả, không cần mã, huấn luyện nhận diện ảnh?</span><br><span class="a">Teachable Machine.</span></div> <div class="rv"><span>2. Vì sao không dùng ảnh khuôn mặt khi thử?</span><br><span class="a">Để bảo vệ dữ liệu cá nhân.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li>Bốn công cụ: <b>Teachable Machine, ML5.js, TensorFlow.js, MIT App Inventor.</b></li><li>Huấn luyện: <b>thu thập, huấn luyện, kiểm thử, cải thiện.</b></li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Bảng so sánh kỹ thuật các công cụ.<br><b>Tiết sau: "Phương pháp kiểm thử, đánh giá hiệu quả của hệ thống AI" (Tiết 9, 12.C3.2). Chuẩn bị: giữ mô hình đã huấn luyện (hoặc ảnh chụp kết quả) để dùng cho tiết sau.</b></p>
+ <aside>Thu bảng cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>

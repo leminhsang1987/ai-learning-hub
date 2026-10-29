@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 10, Tiết 9: Một số công nghệ trong AI</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#10-09">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 10 · Tiết 9/12 · 10.C3.3</span>
+ <h1 style="margin-top:90px">Một số công nghệ trong AI</h1>
+ <p class="big mute" style="">Phân loại, dự đoán hay tạo sinh?</p>
+ <aside>Nhắc lại tiết 8: chatbot cho ra văn bản mới. Hôm nay phân biệt các loại AI. Chia nhóm 4–5 học sinh.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Phân biệt <b>AI tạo sinh</b> với AI <b>phân loại</b> và <b>dự đoán</b> qua ví dụ.</li><li>Lập <b>bảng ma trận so sánh</b> bản chất và ứng dụng.</li><li>Giải thích vì sao nội dung tạo sinh cần kiểm chứng.</li></ul>
+ <aside>YCCĐ 10.C3.3 (liên hệ mở rộng 10.C3.MR1 ở mức khái niệm). Sản phẩm: Bảng ma trận so sánh AI tạo sinh và AI phân loại.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Máy đang làm gì?</h2> <div class="rv f"><span>1. Lọc thư rác</span></div> <div class="rv f"><span>2. Đọc biển số xe</span></div> <div class="rv f"><span>3. Viết bài thơ tặng mẹ</span><br><span class="a">Hai việc đầu: máy <b>chọn nhãn có sẵn</b>. Việc thứ ba: máy <b>tạo ra nội dung mới</b>.</span></div>
+ <aside>Hỏi: máy chọn ra thứ có sẵn hay tạo ra thứ mới? Bấm ô thứ ba để hiện câu dẫn.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="6">
+ <span class="ph">Kiến thức · 6 phút</span>
+ <h2>Ba loại bài toán của AI</h2> <div class="cols" style="grid-template-columns:repeat(3,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Phân loại</b>Xếp đối tượng vào nhóm có sẵn.<p class="sm mute" style="margin:8px 0 0">Thư rác hay không? Biển số nào?</p></div><div class="card f sm"><b class="k" style="font-size:30px">Dự đoán</b>Ước lượng con số hoặc xu hướng từ dữ liệu quá khứ.<p class="sm mute" style="margin:8px 0 0">Lượng mưa, giá nhà.</p></div><div class="card f sm"><b class="k" style="font-size:30px">Tạo sinh</b>Tạo nội dung mới (văn bản, ảnh, âm thanh) theo mẫu đã học.<p class="sm mute" style="margin:8px 0 0">Viết email, vẽ ảnh.</p></div></div> <p class="f big" style="margin:14px 0 0">Câu hỏi nhận diện: <b>đầu ra là nhãn, con số hay nội dung mới?</b></p>
+ <aside>Mỗi loại 1,5–2 phút kèm ví dụ gần gũi. Lưu ý ranh giới có thể chồng lấn: một hệ thống thực tế có thể kết hợp nhiều loại.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="5">
+ <span class="ph">Ma trận · 5 phút</span>
+ <h2>Ma trận so sánh</h2> <table><tr><th>Tiêu chí</th><th>Phân loại</th><th>Dự đoán</th><th>Tạo sinh</th></tr><tr><td>Đầu ra</td><td>Nhãn, nhóm</td><td>Con số, xu hướng</td><td>Nội dung mới</td></tr><tr><td>Ví dụ</td><td>Lọc thư rác</td><td>Dự báo mưa</td><td>Viết, vẽ, tạo nhạc</td></tr><tr><td>Kiểm tra đúng sai</td><td>Có đáp án chuẩn</td><td>Có số thật để so</td><td>Thường nhiều đáp án chấp nhận được</td></tr><tr><td>Rủi ro điển hình</td><td>Gán nhãn sai, thiên vị</td><td>Sai khi bối cảnh đổi</td><td>Nghe thuyết phục nhưng sai</td></tr></table> <p class="sm mute" style="margin-top:10px">Ma trận mẫu cho cả lớp; nhóm sẽ tự điền thêm ví dụ.</p>
+ <aside>Đọc từng hàng, hỏi học sinh cho thêm ví dụ. Hàng cuối nối với bài học thiên vị (tiết 6) và kiểm chứng (tiết 8).</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="3">
+ <span class="ph">Mẹo nhận diện · 3 phút</span>
+ <h2>Ba câu hỏi nhận diện nhanh</h2> <ul class="big"><li><b>Đầu ra là gì?</b> nhãn, con số hay nội dung mới</li><li><b>Có nhiều đáp án "chấp nhận được" không?</b> nếu có, thường là tạo sinh</li><li><b>Có đáp án chuẩn để chấm đúng sai không?</b> nếu có, thường là phân loại hoặc dự đoán</li></ul>
+ <aside>Gợi ý nhanh, không tuyệt đối. Cho học sinh thử với 'gợi ý video' ở tiết 1 (dự đoán sở thích).</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: ghép cặp tình huống</h2> <div class="cols" style="grid-template-columns:repeat(4,1fr);flex:0 1 auto"><div class="card sm">Lọc thư rác</div><div class="card sm">Nhận diện biển số xe</div><div class="card sm">Dự báo lượng mưa ngày mai</div><div class="card sm">Tóm tắt một tài liệu</div><div class="card sm">Sinh ý tưởng cho poster</div><div class="card sm">Nhận diện bệnh cây qua ảnh lá</div><div class="card sm">Ước tính giá nhà</div><div class="card sm">Viết email xin phép nghỉ học</div></div> <ul class="sm"><li>Xếp 8 thẻ vào <b>3 cột</b>: phân loại, dự đoán, tạo sinh.</li><li>Điền <b>ma trận so sánh</b> của nhóm.</li><li>Chọn <b>một thẻ khó</b> và giải thích.</li></ul>
+ <aside>In 8 thẻ trên (hoặc dùng Lab khi đã kết nối). Đáp án gợi ý: phân loại (lọc thư rác, biển số, bệnh cây), dự đoán (mưa, giá nhà), tạo sinh (tóm tắt, ý tưởng poster, email).</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="9">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian làm việc nhóm</h2> <button class="timer" data-timer="540"><span class="tm">9:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–4:</b> xếp thẻ vào ba cột</li><li><b>Phút 5–8:</b> điền ma trận, chọn thẻ khó</li><li><b>Phút 9:</b> chuẩn bị báo cáo</li></ul>
+ <aside>Đi các nhóm, hỏi 'đầu ra của hệ thống này là gì?'. Chú ý thẻ 'tóm tắt tài liệu' dễ gây tranh luận vì có yếu tố tạo ra văn bản mới.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="7">
+ <span class="ph">Thảo luận · 7 phút</span>
+ <h2>Thẻ khó và bài học</h2> <p class="sm" style="">Mỗi nhóm nêu <b>một thẻ khó</b> và lý do; lớp cùng bàn.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Ví dụ khó</b>"Gợi ý video": dự đoán điều em thích. "Chatbot": tạo sinh văn bản.</div><div class="card f sm"><b class="k" style="font-size:30px">Điều cần nhớ</b>Ranh giới có thể chồng lấn; hãy hỏi <b>đầu ra là gì</b>.</div></div>
+ <aside>Cho 3–4 nhóm nêu thẻ khó. Thừa nhận khi một số trường hợp có thể giải thích theo hai cách; điều quan trọng là lập luận rõ.</aside>
+</section>
+
+<section class="s" data-p="Mở rộng" data-m="3">
+ <span class="ph">Mở rộng · 3 phút · 10.C3.MR1</span>
+ <h2>Tạo sinh hoạt động thế nào?</h2> <ul class="big"><li>Học mẫu từ <b>lượng dữ liệu rất lớn</b>.</li><li>Dựa trên mẫu đã học, <b>đoán phần tiếp theo</b> (từ, điểm ảnh).</li><li>Ghép các phần đoán thành <b>nội dung mới</b>.</li></ul> <p class="f" style="font-size:28px;margin:12px 0 0">Vì vậy nội dung có thể <b>nghe đúng mà vẫn sai</b>: cần kiểm chứng.</p>
+ <aside>Mô tả đơn giản hóa để dễ hiểu (gần đúng). Nối với bài tiết 8: kiểm chứng đối chiếu SGK. Lab 'Phân loại hay tạo sinh?' có demo đoán từ kế tiếp.</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="3">
+ <span class="ph">Củng cố · 3 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Lọc thư rác thuộc loại nào?</span><br><span class="a">Phân loại.</span></div> <div class="rv"><span>2. Viết email xin phép nghỉ học thuộc loại nào?</span><br><span class="a">Tạo sinh.</span></div> <div class="rv"><span>3. Dự báo lượng mưa ngày mai thuộc loại nào?</span><br><span class="a">Dự đoán.</span></div> <div class="rv"><span>4. Đúng hay sai: nội dung tạo sinh viết trôi chảy thì luôn chính xác.</span><br><span class="a">Sai. Cần kiểm chứng.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li><b>Phân loại</b> (nhãn), <b>dự đoán</b> (con số), <b>tạo sinh</b> (nội dung mới).</li><li>Nội dung tạo sinh <b>luôn cần kiểm chứng</b>.</li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Bảng ma trận so sánh AI tạo sinh và AI phân loại.<br><b>Tiết sau: "Tầm quan trọng của chất lượng dữ liệu huấn luyện" (Tiết 10, 10.C4.1). Chuẩn bị: nghĩ vì sao dữ liệu quan trọng với AI.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>

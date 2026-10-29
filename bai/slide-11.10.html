@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 11, Tiết 10: Thiết kế tổng thể hệ thống AI</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#11-10">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 11 · Tiết 10/12 · 11.D1.1</span>
+ <h1 style="margin-top:90px">Thiết kế tổng thể hệ thống AI</h1>
+ <p class="big mute" style="">Bản vẽ kiến trúc hệ thống AI</p>
+ <aside>Nhắc lại các tiết 7–9 (công nghệ, mạng nơ-ron, thuật toán). Hôm nay ghép lại thành một bản thiết kế. Chia nhóm 4–5 học sinh.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Trình bày cách <b>thiết kế tổng thể</b> một hệ thống AI.</li><li>Thể hiện mối liên hệ <b>mục tiêu, dữ liệu, mô hình</b>.</li><li>Vẽ <b>bản kiến trúc</b> và viết <b>thuyết minh luồng dữ liệu</b>.</li></ul>
+ <aside>YCCĐ 11.D1.1. Sản phẩm: Bản vẽ sơ đồ kiến trúc tổng thể hệ thống AI; Bản thuyết minh kỹ thuật luồng dữ liệu.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Đổi mục tiêu thì đổi gì?</h2> <p class="big" style="">Hệ thống giám sát phân loại rác ở trường đổi mục tiêu từ <b>3 loại rác</b> sang <b>8 loại rác</b>. Phải đổi gì?</p> <ul class="sm"><li><b>Dữ liệu:</b> cần ảnh nhiều loại hơn</li><li><b>Mô hình:</b> phân biệt nhiều lớp hơn</li><li><b>Đầu ra:</b> thêm nhãn</li><li><b>Cách đánh giá:</b> đo từng loại</li></ul>
+ <aside>Cho học sinh nêu tự do rồi bấm hiện từng dòng. Chốt: mục tiêu kéo theo mọi thứ.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Kiến thức · 4 phút</span>
+ <h2>Mối liên hệ cốt lõi</h2> <div class="cols" style="grid-template-columns:repeat(3,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Mục tiêu quyết định dữ liệu</b>Cần dữ liệu nào, bao nhiêu.</div><div class="card f sm"><b class="k" style="font-size:30px">Dữ liệu giới hạn mô hình</b>Ít hoặc lệch thì mô hình yếu.</div><div class="card f sm"><b class="k" style="font-size:30px">Mô hình quyết định đầu ra</b>Và cách đo, cách phản hồi.</div></div> <p class="f big" style="margin:14px 0 0">Phản hồi quay lại để <b>cải tiến mục tiêu, dữ liệu, mô hình</b>.</p>
+ <aside>Nối với 5 thành phần (khối 10 tiết 11) và vòng phản hồi.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="5">
+ <span class="ph">Thành phần · 5 phút</span>
+ <h2>Các khối của bản vẽ kiến trúc</h2> <table><tr><th>Khối</th><th>Câu hỏi thiết kế</th></tr><tr><td>Mục tiêu</td><td>Giải quyết vấn đề gì, đo bằng gì?</td></tr><tr><td>Thu thập dữ liệu</td><td>Lấy từ đâu? Riêng tư thế nào?</td></tr><tr><td>Tiền xử lý</td><td>Làm sạch, chuẩn hóa ra sao?</td></tr><tr><td>Mô hình</td><td>Loại bài toán, công cụ nào?</td></tr><tr><td>Đầu ra và hành động</td><td>Kết quả hiển thị cho ai?</td></tr><tr><td>Giám sát và phản hồi</td><td>Ai kiểm tra, cập nhật?</td></tr></table>
+ <aside>Đọc từng khối. Nhấn mạnh 'Thu thập dữ liệu' liên hệ ba quyền ở tiết 3 và 'Giám sát' liên hệ khối 12 (chốt chặn).</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Làm mẫu · 4 phút</span>
+ <h2>Mẫu: hệ thống giám sát phân loại rác</h2> <table><tr><th>Bước</th><th>Dữ liệu đi qua</th></tr><tr><td>Camera ở thùng rác</td><td>Ảnh vật thể (không có người)</td></tr><tr><td>Tiền xử lý</td><td>Ảnh đã cắt, chỉnh sáng</td></tr><tr><td>Mô hình phân loại</td><td>Nhãn loại rác</td></tr><tr><td>Hiển thị và nhắc</td><td>Gợi ý bỏ vào thùng nào</td></tr><tr><td>Phản hồi</td><td>Học sinh báo sai, ảnh mới</td></tr></table> <p class="sm mute" style="margin-top:10px">Ví dụ giả định để làm mẫu.</p>
+ <aside>Chỉ vào từng mũi tên: dữ liệu gì đi qua, ai hoặc cái gì xử lý. Chú ý camera hướng vào vật thể, tránh ghi hình người.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="3">
+ <span class="ph">Thuyết minh · 3 phút</span>
+ <h2>Viết thuyết minh luồng dữ liệu</h2> <ul class="big"><li>Mỗi mũi tên có <b>tên dữ liệu</b>.</li><li>Ghi <b>ai hoặc cái gì xử lý</b> ở mỗi khối.</li><li>Đánh dấu <b>điểm con người can thiệp</b>.</li><li>Nêu <b>dữ liệu cá nhân</b> đi đâu (nếu có).</li></ul>
+ <aside>Thuyết minh 5 câu. Nối với chốt chặn (khối 12 tiết 1) và quyền dữ liệu (khối 11 tiết 3).</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: vẽ bản kiến trúc</h2> <p class="sm" style="">Chọn: giám sát phân loại rác, nhắc tắt điện, hỗ trợ đọc cho người khiếm thị, hoặc ý tưởng nhóm.</p> <ul class="sm"><li>Vẽ sơ đồ <b>ít nhất 6 khối</b>, mũi tên có <b>tên dữ liệu</b>.</li><li>Đánh dấu <b>điểm con người can thiệp</b>.</li><li>Viết <b>thuyết minh 5 câu</b>.</li></ul>
+ <aside>Phát giấy A3. Có thể dùng Lab 'Bản vẽ kiến trúc hệ thống AI' khi đã kết nối.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="11">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian làm việc nhóm</h2> <button class="timer" data-timer="660"><span class="tm">11:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–3:</b> chọn hệ thống, viết mục tiêu</li><li><b>Phút 4–8:</b> vẽ bản kiến trúc</li><li><b>Phút 9–11:</b> viết thuyết minh luồng dữ liệu</li></ul>
+ <aside>Đi các nhóm hỏi: 'Nếu đổi mục tiêu thì khối nào đổi? Dữ liệu cá nhân có đi qua đây không?'.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="7">
+ <span class="ph">Báo cáo · 7 phút</span>
+ <h2>Giới thiệu bản vẽ</h2> <p class="sm" style="">Mỗi nhóm 1,5 phút; lớp hỏi 30 giây.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Nhóm nêu</b>Mục tiêu · các khối · luồng dữ liệu · điểm can thiệp.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp hỏi</b>Nếu đổi mục tiêu thì khối nào đổi? Ai giám sát?</div></div>
+ <aside>Chọn 4 nhóm. Hỏi chất vấn bằng thay đổi giả định như ở bài khởi động.</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="2">
+ <span class="ph">Củng cố · 2 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Mục tiêu có quan hệ gì với dữ liệu?</span><br><span class="a">Mục tiêu quyết định cần dữ liệu nào.</span></div> <div class="rv"><span>2. Thuyết minh luồng dữ liệu cần ghi gì ở mũi tên?</span><br><span class="a">Tên dữ liệu đi qua.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li><b>Mục tiêu, dữ liệu, mô hình</b> liên kết với nhau.</li><li>Bản vẽ có <b>mũi tên dữ liệu</b> và <b>điểm con người can thiệp</b>.</li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Bản vẽ kiến trúc · Thuyết minh luồng dữ liệu.<br><b>Tiết sau: "Cơ chế vận hành công nghệ trong hệ thống AI" (Tiết 11, 11.D2.1). Chuẩn bị: nghĩ một hệ thống chạy lâu dài sẽ gặp những vấn đề gì.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>

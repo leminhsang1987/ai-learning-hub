@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 12, Tiết 10: Lựa chọn phương án thiết kế và vận hành hệ thống AI</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#12-10">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 12 · Tiết 10/12 · 12.D1.1</span>
+ <h1 style="margin-top:90px">Lựa chọn phương án thiết kế và vận hành hệ thống AI</h1>
+ <p class="big mute" style="">Chọn phương án thiết kế: không có lựa chọn hoàn hảo</p>
+ <aside>Nhắc lại tiết 9 (kiểm thử). Hôm nay chọn cách làm cho dự án của nhóm bằng lập luận. Chia nhóm 4–5 học sinh, dùng ý tưởng dự án từ tiết 7.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Nhận biết <b>2–3 phương án</b> thiết kế và vận hành cho một nhiệm vụ.</li><li>Phân tích <b>bài toán đánh đổi</b> theo mục tiêu, dữ liệu, phần cứng, chi phí, rủi ro.</li><li>Viết <b>bản luận chứng</b> chọn giải pháp.</li></ul>
+ <aside>YCCĐ 12.D1.1 (mở rộng 12.D1.MR1). Sản phẩm: Bảng so sánh phương án; Bản luận chứng lựa chọn giải pháp thiết kế tối ưu.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Ba cách làm AI nhận diện bệnh lá</h2> <div class="rv f"><span><b>A.</b> Dùng công cụ không cần mã (như Teachable Machine)</span></div> <div class="rv f"><span><b>B.</b> Tự viết mã với TensorFlow.js</span></div> <div class="rv f"><span><b>C.</b> Dùng mô hình có sẵn qua ML5.js</span></div> <p class="f big" style="margin-top:10px">Chọn cách nào? Câu trả lời tùy vào <b>nhiều yếu tố cùng lúc</b>.</p>
+ <aside>Cho học sinh bỏ phiếu rồi hỏi lý do. Ghi lý do lên bảng, sau đó gom thành 5 tiêu chí ở slide sau.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Kiến thức · 4 phút</span>
+ <h2>Năm tiêu chí so sánh phương án</h2> <div class="cols" style="grid-template-columns:repeat(3,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Hiệu quả</b>Đạt mục tiêu tốt đến đâu?</div><div class="card f sm"><b class="k" style="font-size:30px">Dữ liệu</b>Có sẵn bao nhiêu, chất lượng ra sao?</div><div class="card f sm"><b class="k" style="font-size:30px">Phần cứng</b>Máy, mạng, thiết bị có đủ không?</div><div class="card f sm"><b class="k" style="font-size:30px">Chi phí, thời gian</b>Tốn bao nhiêu tiền, công sức?</div><div class="card f sm"><b class="k" style="font-size:30px">Rủi ro</b>Đạo đức, an toàn, riêng tư.</div></div>
+ <aside>Mỗi tiêu chí khoảng 45 giây. Nối với 6 nguyên tắc (tiết 4) và ma trận rủi ro (tiết 6).</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="3">
+ <span class="ph">Kiến thức · 3 phút</span>
+ <h2>Bài toán đánh đổi (trade-off)</h2> <ul class="big"><li><b>Chính xác hơn</b> thường cần nhiều dữ liệu và tính toán hơn, chậm hơn.</li><li><b>Chạy trên điện thoại</b> cần mô hình nhẹ, có thể kém chính xác hơn.</li><li><b>Cá nhân hóa tốt hơn</b> thường cần dữ liệu cá nhân, tăng rủi ro riêng tư.</li></ul>
+ <aside>Nhấn mạnh: không có phương án tốt nhất ở mọi mặt; phải chọn theo ưu tiên của bài toán.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="5">
+ <span class="ph">Công cụ · 5 phút</span>
+ <h2>Bảng quyết định có trọng số</h2> <table><tr><th>Tiêu chí (trọng số)</th><th>A</th><th>B</th><th>C</th></tr><tr><td>Hiệu quả (3)</td><td>3</td><td>5</td><td>2</td></tr><tr><td>Dữ liệu (2)</td><td>4</td><td>3</td><td>5</td></tr><tr><td>Phần cứng (1)</td><td>5</td><td>3</td><td>4</td></tr><tr><td>Chi phí, thời gian (3)</td><td>5</td><td>2</td><td>4</td></tr><tr><td>Rủi ro (2)</td><td>4</td><td>3</td><td>4</td></tr><tr><td><b>Tổng điểm</b></td><td><b>45</b></td><td><b>36</b></td><td><b>40</b></td></tr></table> <p class="sm" style="margin-top:8px">Điểm = trọng số × điểm từng phương án (1–5), cộng lại. Số liệu giả định; điểm chỉ <b>hỗ trợ lập luận</b>.</p>
+ <aside>Cho học sinh tự kiểm lại phép tính của phương án A: 3×3 + 2×4 + 1×5 + 3×5 + 2×4 = 45. Hỏi: nếu trọng số rủi ro tăng gấp đôi, thứ tự có đổi không?</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="3">
+ <span class="ph">Luận chứng · 3 phút</span>
+ <h2>Bản luận chứng lựa chọn</h2> <ul class="big"><li><b>Chọn gì?</b> Nêu phương án và 2 lý do.</li><li><b>Chấp nhận đánh đổi gì?</b></li><li><b>Rủi ro còn lại</b> và cách giảm.</li><li><b>Khi nào đổi</b> phương án?</li></ul>
+ <aside>Bản luận chứng khoảng 5 câu. Điểm số chỉ là bằng chứng; quyết định cuối cùng là lập luận của nhóm.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: chọn phương án cho dự án</h2> <ul class="sm"><li>Đề xuất <b>2–3 phương án</b> kỹ thuật cho dự án của nhóm.</li><li>Lập <b>bảng trọng số</b>, chấm điểm, chọn phương án.</li><li>Viết <b>bản luận chứng</b> 5 câu. (Mở rộng: phân tích sâu ≥ 3 phương án.)</li></ul>
+ <aside>Phát bảng in. Có thể dùng Lab 'Bài toán đánh đổi' khi đã kết nối. Khuyến khích nhóm đặt trọng số theo ưu tiên của dự án rồi giải thích.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="12">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian làm việc nhóm</h2> <button class="timer" data-timer="720"><span class="tm">12:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–3:</b> đề xuất phương án, đặt trọng số</li><li><b>Phút 4–8:</b> chấm điểm, tính tổng</li><li><b>Phút 9–12:</b> viết luận chứng 5 câu</li></ul>
+ <aside>Đi các nhóm hỏi: 'Vì sao trọng số này lớn? Nếu thiết bị yếu hơn thì chọn lại thế nào?'.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="7">
+ <span class="ph">Báo cáo · 7 phút</span>
+ <h2>Bảo vệ lựa chọn</h2> <p class="sm" style="">Mỗi nhóm 1,5 phút trình bày, lớp chất vấn 30 giây.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Nhóm nêu</b>Phương án · điểm · đánh đổi chấp nhận · rủi ro còn lại.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp chất vấn</b>Nếu trọng số rủi ro tăng gấp đôi thì lựa chọn có đổi không?</div></div>
+ <aside>Chọn 4 nhóm. Khuyến khích chất vấn bằng thay đổi giả định, không chỉ hỏi kết quả.</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="2">
+ <span class="ph">Củng cố · 2 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Bài toán đánh đổi (trade-off) là gì?</span><br><span class="a">Cải thiện tiêu chí này thường làm xấu tiêu chí khác, phải chọn theo ưu tiên.</span></div> <div class="rv"><span>2. Vì sao điểm số không thay thế quyết định?</span><br><span class="a">Điểm phụ thuộc trọng số và giả định; chỉ hỗ trợ lập luận.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li>Chọn phương án theo <b>mục tiêu, dữ liệu, phần cứng, chi phí, rủi ro.</b></li><li>Không có phương án hoàn hảo: <b>viết rõ đánh đổi</b>.</li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Bảng so sánh phương án · Bản luận chứng.<br><b>Tiết sau: "Mô phỏng phân vai hợp tác trong dự án phát triển AI" (Tiết 11, 12.D2.1). Chuẩn bị: nghĩ ai làm gì trong nhóm dự án của em.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 11, Tiết 8: Khái niệm và ứng dụng Mạng nơ-ron nhân tạo (ANN)</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#11-08">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 11 · Tiết 8/12 · 11.C5.1</span>
+ <h1 style="margin-top:90px">Khái niệm và ứng dụng Mạng nơ-ron nhân tạo (ANN)</h1>
+ <p class="big mute" style="">Mạng nơ-ron nhân tạo nhìn từ bên trong</p>
+ <aside>Nhắc lại tiết 7 (khối xử lý). Hôm nay nhìn vào bên trong khối xử lý. Chuẩn bị TensorFlow Playground trên máy hoặc màn chiếu; nếu mạng yếu, dùng bản mô phỏng tối giản trong kho Lab. Chia nhóm 4–5 học sinh.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Nêu cấu trúc <b>ba tầng</b>: đầu vào, ẩn, đầu ra.</li><li>Nêu một số <b>ứng dụng</b> của mạng nơ-ron.</li><li><b>Thực nghiệm</b> thay đổi tham số và ghi lại kết quả.</li></ul>
+ <aside>YCCĐ 11.C5.1 (kiến thức cơ bản mở rộng 11.C5.MR1). Sản phẩm: Phiếu ghi chép thực nghiệm tham số; Sơ đồ cấu trúc 3 tầng.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Máy có thể bắt chước não bộ?</h2> <p class="big" style="">Não có hàng tỉ tế bào thần kinh nối với nhau. Máy tính có thể mô phỏng ý tưởng đó không?</p> <p class="f" style="font-size:28px;margin:12px 0 0"><b>Mạng nơ-ron nhân tạo</b> lấy cảm hứng từ ý tưởng đó, nhưng chỉ là mô phỏng rất đơn giản.</p>
+ <aside>Cho học sinh nêu ý kiến. Lưu ý không nói 'máy suy nghĩ như não'; chỉ lấy cảm hứng.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="5">
+ <span class="ph">Kiến thức · 5 phút</span>
+ <h2>Cấu trúc ba tầng</h2> <div class="cols" style="grid-template-columns:repeat(3,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Lớp đầu vào</b>Nhận dữ liệu: điểm ảnh, số đo.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp ẩn</b>Nhiều nơ-ron trộn và biến đổi thông tin.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp đầu ra</b>Kết quả: nhãn hoặc con số.</div></div> <p class="f big" style="margin:14px 0 0">Các kết nối có <b>trọng số</b> (độ mạnh). Huấn luyện là <b>điều chỉnh trọng số</b>.</p>
+ <aside>Có thể vẽ sơ đồ trên bảng. Giải thích đơn giản: nơ-ron nhận nhiều giá trị, cộng có trọng số, rồi đưa ra một giá trị.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Ứng dụng · 4 phút</span>
+ <h2>Ứng dụng của mạng nơ-ron</h2> <table><tr><th>Lĩnh vực</th><th>Ứng dụng</th></tr><tr><td>Thị giác</td><td>Nhận diện ảnh, đọc chữ viết tay</td></tr><tr><td>Ngôn ngữ</td><td>Dịch, chatbot</td></tr><tr><td>Âm thanh</td><td>Nhận dạng giọng nói</td></tr><tr><td>Y tế</td><td>Hỗ trợ đọc ảnh chẩn đoán</td></tr><tr><td>Dự báo</td><td>Thời tiết, nhu cầu năng lượng</td></tr></table>
+ <aside>Hỏi học sinh: ứng dụng nào các em đã gặp? Nối với tiết 7.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="3">
+ <span class="ph">Cách học · 3 phút</span>
+ <h2>Mạng học bằng cách điều chỉnh</h2> <ul class="big"><li><b>1.</b> Dự đoán</li><li><b>2.</b> So với đáp án đúng</li><li><b>3.</b> Tính sai số</li><li><b>4.</b> Điều chỉnh trọng số</li><li><b>5.</b> Lặp lại nhiều lần</li></ul>
+ <aside>Mô tả mức khái niệm, không dạy công thức. Mỗi lần lặp gọi là một vòng huấn luyện.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Hướng dẫn · 4 phút</span>
+ <h2>Thực nghiệm trên TensorFlow Playground</h2> <table><tr><th>Tham số</th><th>Em thay đổi</th><th>Em quan sát</th></tr><tr><td>Dữ liệu mẫu</td><td>Hai cụm, vòng tròn, xoắn ốc</td><td>Đường phân tách</td></tr><tr><td>Số lớp ẩn</td><td>0, 1, 2</td><td>Mạng có tách được không?</td></tr><tr><td>Số nơ-ron mỗi lớp</td><td>1 đến 6</td><td>Mạng có học nhanh hơn?</td></tr><tr><td>Nhiễu</td><td>Tăng dần</td><td>Độ chính xác ra sao?</td></tr></table>
+ <aside>Phiên bản có thể thay đổi giao diện: kiểm tra trước giờ dạy. Nếu không có máy, giáo viên điều khiển trên màn chiếu, nhóm dự đoán trước khi bấm.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: thực nghiệm mạng nơ-ron</h2> <ul class="big"><li>Thử <b>3 cấu hình</b> trên tập "hai cụm" rồi "xoắn ốc".</li><li>Ghi <b>phiếu thực nghiệm</b>: cấu hình, số vòng lặp, kết quả.</li><li>Vẽ <b>sơ đồ 3 tầng</b> của cấu hình tốt nhất.</li></ul>
+ <aside>Phát phiếu in. Có thể dùng Lab 'Mạng nơ-ron nhìn từ bên trong' khi đã kết nối. Mở rộng 11.C5.MR1: nhóm giải thích vì sao tập xoắn ốc cần nhiều nơ-ron hơn.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="12">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian thực nghiệm</h2> <button class="timer" data-timer="720"><span class="tm">12:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–3:</b> mở công cụ, thử cấu hình 1</li><li><b>Phút 4–9:</b> cấu hình 2 và 3, ghi phiếu</li><li><b>Phút 10–12:</b> vẽ sơ đồ, rút ra nhận xét</li></ul>
+ <aside>Đi các nhóm hỏi: 'Thêm nơ-ron thì đường phân tách thay đổi thế nào? Khi nào mạng chưa học được?'.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="6">
+ <span class="ph">Báo cáo · 6 phút</span>
+ <h2>Chia sẻ phát hiện</h2> <p class="sm" style="">Mỗi nhóm 1,5 phút: cấu hình tốt nhất, điều bất ngờ, bài học.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Nhóm nêu</b>Cấu hình · kết quả · sơ đồ 3 tầng · phát hiện.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp hỏi</b>Vì sao thêm lớp ẩn giúp tách tập khó hơn?</div></div>
+ <aside>Chọn 4 nhóm. Tổng kết: bài toán khó cần mạng đủ lớn; mạng quá lớn có thể quá khớp (khối 12 tiết 9).</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="2">
+ <span class="ph">Củng cố · 2 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Ba tầng của mạng nơ-ron là gì?</span><br><span class="a">Lớp đầu vào, lớp ẩn, lớp đầu ra.</span></div> <div class="rv"><span>2. Huấn luyện mạng là làm gì?</span><br><span class="a">Điều chỉnh trọng số để dự đoán đúng hơn.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li>Mạng nơ-ron gồm <b>3 tầng</b> nối với nhau bằng <b>trọng số</b>.</li><li>Huấn luyện là <b>điều chỉnh trọng số</b> qua nhiều vòng lặp.</li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Phiếu thực nghiệm tham số · Sơ đồ cấu trúc 3 tầng.<br><b>Tiết sau: "Thuật toán học máy: Phân lớp và Phân cụm" (Tiết 9, 11.C5.2). Chuẩn bị: nghĩ một cách để chia học sinh trong lớp thành nhóm theo sở thích.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>

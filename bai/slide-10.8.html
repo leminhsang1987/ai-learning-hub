@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 10, Tiết 8: Kỹ thuật đặt câu lệnh (Prompt) hiệu quả</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#10-08">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 10 · Tiết 8/12 · 10.C3.1</span>
+ <h1 style="margin-top:90px">Kỹ thuật đặt câu lệnh (Prompt) hiệu quả</h1>
+ <p class="big mute" style="">Một câu lệnh tốt cho kết quả tốt</p>
+ <aside>Nhắc lại tiết 7 (dùng AI học tập: Hỏi, Kiểm chứng, Ghi nguồn). Nếu có máy: mỗi nhóm 1 máy. Chia nhóm 4–5 học sinh.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Mô tả <b>4 thành tố</b> của một prompt chuẩn.</li><li><b>Sửa</b> một prompt sơ sài thành prompt có cấu trúc.</li><li>Thử <b>2–3 phiên bản</b> và <b>kiểm chứng</b> kết quả bằng sách giáo khoa.</li></ul>
+ <aside>YCCĐ 10.C3.1, 10.C3.2. Sản phẩm: Phiếu thiết kế Prompt chuẩn cấu trúc; Nhật ký thực nghiệm và kiểm chứng kết quả.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Hai câu lệnh, hai kết quả</h2> <div class="rv f"><span><b>Prompt 1:</b> "Viết về biến đổi khí hậu."</span></div> <div class="rv f"><span><b>Prompt 2:</b> "Bạn là giáo viên Địa lí. Tóm tắt nguyên nhân biến đổi khí hậu cho học sinh lớp 10, 5 gạch đầu dòng, mỗi dòng không quá 15 từ."</span></div> <p class="f big" style="margin-top:10px">Prompt nào cho kết quả dùng được hơn, vì sao?</p>
+ <aside>Cho học sinh dự đoán trước. Có thể chạy thử cả hai bằng công cụ AI do giáo viên trình diễn để so sánh. Dẫn dắt: câu lệnh rõ thì kết quả rõ.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="6">
+ <span class="ph">Kiến thức · 6 phút</span>
+ <h2>Bốn thành tố của một prompt</h2> <div class="cols" style="grid-template-columns:repeat(4,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Vai trò</b>AI đóng vai gì?<p class="sm mute" style="margin:8px 0 0">"Bạn là giáo viên Sinh học."</p></div><div class="card f sm"><b class="k" style="font-size:30px">Ngữ cảnh</b>Đối tượng, bối cảnh, mục đích.<p class="sm mute" style="margin:8px 0 0">"Học sinh lớp 10 vừa học quang hợp."</p></div><div class="card f sm"><b class="k" style="font-size:30px">Yêu cầu</b>Việc cần làm và giới hạn.<p class="sm mute" style="margin:8px 0 0">"Giải thích 2 giai đoạn, 1 ví dụ."</p></div><div class="card f sm"><b class="k" style="font-size:30px">Định dạng</b>Hình thức kết quả.<p class="sm mute" style="margin:8px 0 0">"5 gạch đầu dòng, mỗi dòng ≤ 20 từ."</p></div></div> <p class="sm" style="margin-top:14px">Không cần đủ cả bốn lúc nào, nhưng <b>càng thiếu thì kết quả càng chung chung.</b></p>
+ <aside>Mỗi thành tố 1 phút. Cho học sinh thử nói lại bằng lời của mình. Lưu ý: thứ tự các thành tố linh hoạt; quan trọng là rõ ràng.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="5">
+ <span class="ph">Làm mẫu · 5 phút</span>
+ <h2>Sửa một prompt sơ sài</h2> <p class="sm" style=""><b>Sơ sài:</b> "Giải thích quang hợp."</p> <table><tr><th>Thành tố</th><th>Viết thêm</th></tr><tr><td>Vai trò</td><td>Bạn là giáo viên Sinh học.</td></tr><tr><td>Ngữ cảnh</td><td>Học sinh lớp 10 vừa học bài quang hợp.</td></tr><tr><td>Yêu cầu</td><td>Giải thích hai giai đoạn và nêu một ví dụ đời sống.</td></tr><tr><td>Định dạng</td><td>5 gạch đầu dòng, mỗi dòng không quá 20 từ.</td></tr></table>
+ <aside>Làm từng dòng cùng cả lớp, bấm hiện từng bước nếu muốn. Đây là mẫu để học sinh bắt chước, không phải prompt duy nhất đúng.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="3">
+ <span class="ph">Quy trình · 3 phút</span>
+ <h2>Quy trình thực nghiệm</h2> <ul class="big"><li><b>1. Viết</b> prompt (đủ 4 thành tố)</li><li><b>2. Chạy</b> và đọc kết quả</li><li><b>3. Kiểm chứng</b>: đối chiếu ít nhất 1 chi tiết với SGK</li><li><b>4. Sửa</b> prompt rồi chạy lại</li></ul> <p class="sm mute" style="margin-top:10px">Không nhập thông tin cá nhân của mình hoặc của bạn vào prompt.</p>
+ <aside>Nhắc lại bài học về dữ liệu cá nhân ở tiết 3 và 4. Ghi mỗi phiên bản vào Nhật ký: nội dung prompt, kết quả, điểm đúng/sai so với SGK, điều chỉnh.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: nâng cấp prompt</h2> <p class="" style="">Mỗi nhóm chọn <b>một</b> prompt sơ sài:</p> <ul class="sm"><li>"Tóm tắt bài Sử."</li><li>"Giúp em học từ vựng tiếng Anh."</li><li>"Giải bài tập Toán."</li><li>"Viết đoạn văn về quê em."</li></ul> <p class="sm" style="margin-top:10px">Viết phiên bản <b>4 thành tố</b>, thử <b>2–3 phiên bản</b>, ghi Nhật ký và kiểm chứng với SGK.</p>
+ <aside>Cách làm: dùng công cụ phù hợp độ tuổi theo quy định của trường, hoặc Prompt Lab 'phát lại' khi đã kết nối; nếu không có máy, nhóm viết prompt lên phiếu và giáo viên chạy trình diễn một số prompt tiêu biểu.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="13">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian làm việc nhóm</h2> <button class="timer" data-timer="780"><span class="tm">13:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–4:</b> viết phiên bản 1 (4 thành tố)</li><li><b>Phút 5–10:</b> chạy, kiểm chứng SGK, sửa phiên bản 2–3</li><li><b>Phút 11–13:</b> hoàn thiện Phiếu và Nhật ký</li></ul>
+ <aside>Đi các nhóm hỏi: 'Thành tố nào còn thiếu? Chi tiết nào em đã đối chiếu SGK?'. Khuyến khích nhóm ghi cả lỗi AI mắc phải.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="6">
+ <span class="ph">Báo cáo · 6 phút</span>
+ <h2>Chia sẻ prompt tốt nhất</h2> <p class="sm" style="">Mỗi nhóm 1,5 phút: prompt tốt nhất và <b>một điểm AI trả lời chưa đúng</b> khi đối chiếu SGK.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Nhóm nêu</b>Prompt trước và sau · thay đổi kết quả · một lỗi tìm được.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp hỏi</b>Thành tố nào tạo khác biệt lớn nhất?</div></div>
+ <aside>Chọn 3–4 nhóm có kết quả khác nhau. Khen việc phát hiện lỗi qua đối chiếu SGK.</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="3">
+ <span class="ph">Củng cố · 3 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Thành tố "định dạng" là gì?</span><br><span class="a">Hình thức kết quả mong muốn: bảng, gạch đầu dòng, độ dài…</span></div> <div class="rv"><span>2. Prompt "Viết về lịch sử" thiếu những gì?</span><br><span class="a">Ngữ cảnh, yêu cầu cụ thể, định dạng.</span></div> <div class="rv"><span>3. Đúng hay sai: AI trả lời trôi chảy nghĩa là đúng.</span><br><span class="a">Sai. Phải đối chiếu sách giáo khoa.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li>Prompt tốt gồm <b>vai trò, ngữ cảnh, yêu cầu, định dạng</b>.</li><li>Luôn <b>kiểm chứng</b> kết quả AI bằng nguồn tin cậy.</li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Phiếu thiết kế Prompt · Nhật ký thực nghiệm.<br><b>Tiết sau: "Một số công nghệ trong AI" (Tiết 9, 10.C3.3). Chuẩn bị: nghĩ ba việc AI có thể làm.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>

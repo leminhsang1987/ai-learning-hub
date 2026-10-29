@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 10, Tiết 11: Cấu trúc cơ bản và Vấn đề phát sinh của hệ thống AI</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#10-11">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 10 · Tiết 11/12 · 10.D1.1</span>
+ <h1 style="margin-top:90px">Cấu trúc cơ bản và Vấn đề phát sinh của hệ thống AI</h1>
+ <p class="big mute" style="">Một hệ thống AI gồm những gì?</p>
+ <aside>Nhắc lại tiết 10 (dữ liệu) và tiết 9 (loại bài toán). Hôm nay ghép lại thành sơ đồ hệ thống. Chia nhóm 4–5 học sinh; chọn ý tưởng AI sẽ dùng cho poster tiết 12.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Nêu <b>mục tiêu</b> hệ thống AI và liên hệ với các thành phần.</li><li>Mô tả <b>5 thành phần</b>: dữ liệu, thuật toán, mô hình, đầu ra, phản hồi.</li><li>Dự báo <b>vấn đề phát sinh</b> khi vận hành và cách khắc phục.</li></ul>
+ <aside>YCCĐ 10.D1.1, 10.D2.1, 10.D2.2. Sản phẩm: Sơ đồ kiến trúc 5 thành phần; Bản mô tả vấn đề phát sinh và hướng khắc phục. Sơ đồ này sẽ dùng cho poster ở tiết 12.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Camera phân loại rác</h2> <p class="big" style="">Em muốn làm một camera tự phân loại rác ở trường. Hệ thống cần những gì để chạy được?</p> <ul class="big"><li>Máy phải làm <b>việc gì</b> cụ thể?</li><li>Máy cần <b>học từ cái gì</b>?</li><li>Ai <b>sửa</b> khi máy sai?</li></ul>
+ <aside>Cho học sinh nêu tự do 1–2 phút, ghi lên bảng. Chốt: mục tiêu cụ thể là điểm xuất phát, ví dụ 'phân loại ảnh rác thành nhựa, giấy, hữu cơ'.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="6">
+ <span class="ph">Kiến thức · 6 phút</span>
+ <h2>Mục tiêu và năm thành phần</h2> <div class="cols" style="grid-template-columns:repeat(5,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Dữ liệu</b>Ảnh rác có nhãn.</div><div class="card f sm"><b class="k" style="font-size:30px">Thuật toán</b>Cách để máy học từ dữ liệu.</div><div class="card f sm"><b class="k" style="font-size:30px">Mô hình</b>Kết quả sau khi học.</div><div class="card f sm"><b class="k" style="font-size:30px">Đầu ra</b>Nhãn loại rác máy đưa ra.</div><div class="card f sm"><b class="k" style="font-size:30px">Phản hồi</b>Người sửa kết quả sai, bổ sung dữ liệu.</div></div> <p class="f big" style="margin:14px 0 0"><b>Mục tiêu quyết định các thành phần:</b> đổi mục tiêu thì dữ liệu và đầu ra cũng đổi.</p>
+ <aside>Mỗi thành phần 1 phút. Nhấn mạnh phản hồi tạo vòng lặp cải tiến, nối với 'người trong vòng lặp' ở tiết 1.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Làm mẫu · 4 phút</span>
+ <h2>Mẫu: sơ đồ camera phân loại rác</h2> <table><tr><th>Thành phần</th><th>Trong ví dụ</th><th>Nếu thiếu hoặc lỗi</th></tr><tr><td>Dữ liệu</td><td>Ảnh rác có nhãn</td><td>Nhận sai loại chưa gặp</td></tr><tr><td>Thuật toán</td><td>Cách học nhận diện ảnh</td><td>Học chậm hoặc kém</td></tr><tr><td>Mô hình</td><td>Bộ nhận diện đã học</td><td>Lỗi thời khi rác mới xuất hiện</td></tr><tr><td>Đầu ra</td><td>Nhãn: nhựa, giấy, hữu cơ</td><td>Kết quả sai gây nhầm</td></tr><tr><td>Phản hồi</td><td>Người sửa nhãn sai</td><td>Lỗi lặp lại mãi</td></tr></table>
+ <aside>Làm cùng cả lớp. Đây là mẫu, nhóm tự chọn ý tưởng khác.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Vấn đề phát sinh · 4 phút</span>
+ <h2>Khi hệ thống vận hành</h2> <div class="cols" style="grid-template-columns:repeat(3,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Môi trường đổi</b>Ánh sáng thay đổi, loại rác mới: độ chính xác giảm.</div><div class="card f sm"><b class="k" style="font-size:30px">Dữ liệu thiếu hoặc lệch</b>Gặp tình huống chưa học, nhầm lẫn.</div><div class="card f sm"><b class="k" style="font-size:30px">Không có phản hồi</b>Lỗi lặp lại, không cải tiến.</div></div> <p class="sm" style="margin-top:12px"><b>Khắc phục</b> giúp hệ thống an toàn, công bằng và hữu ích lâu dài.</p>
+ <aside>Mỗi vấn đề 1 phút; hỏi học sinh cách khắc phục (bổ sung dữ liệu, cập nhật mô hình, thu phản hồi).</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: vẽ sơ đồ hệ thống AI</h2> <ul class="big"><li>Chọn <b>một ý tưởng AI</b> giải quyết việc thực tế ở trường hoặc địa phương.</li><li>Viết <b>mục tiêu</b> cụ thể và vẽ sơ đồ <b>5 thành phần</b> (có mũi tên và phản hồi).</li><li>Dự báo <b>ít nhất 2 vấn đề phát sinh</b> và hướng khắc phục.</li></ul>
+ <aside>Gợi ý ý tưởng: camera phân loại rác, nhắc bài tập, nhận diện bệnh cây, dự báo ngập. Phát giấy A3. Có thể dùng Lab 'Lắp ráp hệ thống AI 5 thành phần' khi đã kết nối.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="12">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian làm việc nhóm</h2> <button class="timer" data-timer="720"><span class="tm">12:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–3:</b> chọn ý tưởng, viết mục tiêu</li><li><b>Phút 4–9:</b> vẽ sơ đồ 5 thành phần</li><li><b>Phút 10–12:</b> ghi 2 vấn đề và cách khắc phục</li></ul>
+ <aside>Đi các nhóm hỏi: 'Mục tiêu đã đủ cụ thể chưa? Phản hồi quay về đâu?'.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="7">
+ <span class="ph">Báo cáo · 7 phút</span>
+ <h2>Giới thiệu sơ đồ</h2> <p class="sm" style="">Mỗi nhóm 1,5 phút: mục tiêu, 5 thành phần, 1 vấn đề phát sinh. Lớp phản biện 30 giây.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Nhóm nêu</b>Mục tiêu · 5 thành phần · một vấn đề · cách khắc phục.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp hỏi</b>Mục tiêu có cụ thể không? Phản hồi quay về đâu?</div></div>
+ <aside>Chọn 4–5 nhóm. Sơ đồ nhóm được sửa theo góp ý để dùng cho poster ở tiết 12.</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="3">
+ <span class="ph">Củng cố · 3 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Thành phần nào là câu trả lời hệ thống đưa ra?</span><br><span class="a">Đầu ra.</span></div> <div class="rv"><span>2. Người bấm "kết quả sai" để hệ thống học thêm thuộc thành phần nào?</span><br><span class="a">Phản hồi.</span></div> <div class="rv"><span>3. Loại rác mới xuất hiện làm độ chính xác giảm: vấn đề gì?</span><br><span class="a">Môi trường đổi, mô hình lỗi thời.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li>Năm thành phần: <b>dữ liệu, thuật toán, mô hình, đầu ra, phản hồi.</b></li><li>Hệ thống vận hành sẽ <b>phát sinh vấn đề</b>; cần phát hiện và khắc phục.</li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Sơ đồ 5 thành phần · Bản mô tả vấn đề và hướng khắc phục.<br><b>Tiết sau: "Báo cáo ý tưởng hệ thống AI và Đánh giá tổng kết" (Tiết 12, Tổng hợp). Chuẩn bị: hoàn thiện poster và Bản khai báo sử dụng AI.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau. Nhắc nhóm hoàn thiện poster ở nhà.</aside>
+</section>
+
+</main>
+</body>
+</html>

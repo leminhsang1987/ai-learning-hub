@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 11, Tiết 7: Khám phá công nghệ NLP, Thị giác máy tính và Cảm biến</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#11-07">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 11 · Tiết 7/12 · 11.C3.2</span>
+ <h1 style="margin-top:90px">Khám phá công nghệ NLP, Thị giác máy tính và Cảm biến</h1>
+ <p class="big mute" style="">Khám phá công nghệ: ngôn ngữ, hình ảnh, cảm biến</p>
+ <aside>Nhắc lại tiết 6. Hôm nay mở hộp đen công nghệ ra từng khối. Chia nhóm 4–5 học sinh. Nếu có thể, chuẩn bị demo trực quan trên web hoặc trình diễn bằng máy giáo viên.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Mô tả công nghệ <b>chatbot, xử lý ngôn ngữ, thị giác máy tính, cảm biến</b>.</li><li>Phân rã một ứng dụng thành <b>đầu vào, xử lý, đầu ra</b>.</li><li>Lập bảng phân tích công nghệ cho <b>3 ứng dụng</b>.</li></ul>
+ <aside>YCCĐ 11.C3.2 (mở rộng 11.C3.MR2). Trọng tâm: mô hình 3 khối và phân rã ứng dụng; chi tiết kỹ thuật chỉ ở phần mở rộng. Sản phẩm: Bảng hoặc sơ đồ phân tích công nghệ AI cho 3 ứng dụng thực tế.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Em hỏi trợ lý ảo: mai trời có mưa không?</h2> <p class="big" style="">Trước khi trả lời, máy phải làm những việc gì?</p> <ul class="big"><li><b>Nghe</b> và chuyển giọng nói thành chữ</li><li><b>Hiểu</b> câu hỏi</li><li><b>Tìm</b> thông tin</li><li><b>Nói</b> câu trả lời</li></ul>
+ <aside>Cho học sinh đoán trước rồi bấm hiện từng bước. Dẫn dắt: nhiều công nghệ nối với nhau trong một ứng dụng.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Kiến thức · 4 phút</span>
+ <h2>Mô hình ba khối</h2> <div class="cols" style="grid-template-columns:repeat(3,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Đầu vào</b>Micro, camera, cảm biến, bàn phím.</div><div class="card f sm"><b class="k" style="font-size:30px">Khối xử lý</b>Mô hình AI phân tích, nhận dạng.</div><div class="card f sm"><b class="k" style="font-size:30px">Đầu ra</b>Nhận dạng, trả lời, hành động.</div></div> <p class="f big" style="margin:14px 0 0">Mọi ứng dụng đều có thể <b>phân rã</b> theo ba khối này.</p>
+ <aside>Nối với 5 thành phần ở khối 10 (tiết 11): ở đây nhìn theo luồng dữ liệu.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="6">
+ <span class="ph">Kiến thức · 6 phút</span>
+ <h2>Bốn công nghệ cơ bản</h2> <table><tr><th>Công nghệ</th><th>Làm gì</th><th>Ví dụ</th><th>Vào → ra</th></tr><tr><td>Chatbot</td><td>Trò chuyện, trả lời</td><td>Trợ lý hỏi đáp</td><td>Câu hỏi → câu trả lời</td></tr><tr><td>Xử lý ngôn ngữ</td><td>Hiểu giọng nói, văn bản</td><td>Nhận dạng giọng, dịch</td><td>Giọng, chữ → chữ, ý nghĩa</td></tr><tr><td>Thị giác máy tính</td><td>Hiểu ảnh, video</td><td>Nhận vật thể, đọc biển số</td><td>Ảnh → nhãn, vị trí</td></tr><tr><td>Cảm biến</td><td>Đo môi trường</td><td>Nhiệt độ, ánh sáng, chuyển động</td><td>Tín hiệu → số liệu</td></tr></table>
+ <aside>Mỗi công nghệ 1–1,5 phút. Có thể trình diễn demo ngắn (dịch, nhận dạng vật thể bằng đồ vật trong lớp). Không dùng ảnh khuôn mặt; kiểm tra điều khoản và độ tuổi của công cụ demo.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Làm mẫu · 4 phút</span>
+ <h2>Phân rã: đèn đường thông minh</h2> <table><tr><th>Đầu vào</th><th>Khối xử lý</th><th>Đầu ra</th></tr><tr><td>Cảm biến ánh sáng, cảm biến chuyển động</td><td>Mô hình nhận biết xe, người đi qua</td><td>Bật, tắt hoặc tăng sáng</td></tr></table> <p class="sm" style="margin-top:14px">Công nghệ chính: <b>cảm biến</b> kết hợp mô hình nhận biết.</p>
+ <aside>Ví dụ tiếp theo cho lớp tự làm: dịch giọng nói, camera nhận biển số. Hỏi: hạn chế của hệ thống là gì (ví dụ cảm biến bẩn, ban đêm).</aside>
+</section>
+
+<section class="s" data-p="Mở rộng" data-m="4">
+ <span class="ph">Mở rộng · 4 phút · 11.C3.MR2</span>
+ <h2>Cách các công nghệ vận hành</h2> <ul class="sm"><li><b>Ngôn ngữ:</b> tách từ → biểu diễn bằng số → mô hình → kết quả.</li><li><b>Thị giác:</b> ảnh là lưới điểm sáng (số) → rút đặc trưng (cạnh, màu) → mô hình phân loại.</li><li><b>Cảm biến:</b> tín hiệu → lọc nhiễu → số liệu cho mô hình.</li></ul>
+ <aside>Phần mở rộng, mô tả đơn giản hóa. Có thể rút gọn hoặc giao nhóm khá. Nối với khối 10 tiết 9 (đoán phần kế tiếp).</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: phân tích 3 ứng dụng</h2> <ul class="big"><li>Chọn <b>3 ứng dụng</b>: dịch giọng nói, nhận biển số, đo nhịp tim, chatbot hỏi đáp…</li><li>Phân rã <b>đầu vào, xử lý, đầu ra</b>; ghi <b>công nghệ chính</b>.</li><li>Nêu <b>một hạn chế</b> của mỗi ứng dụng.</li></ul>
+ <aside>Phát phiếu in. Có thể dùng Lab 'Đầu vào, xử lý, đầu ra' khi đã kết nối. Lớp không có máy dùng ví dụ giáo viên trình diễn hoặc mô tả bằng lời.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="10">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian làm việc nhóm</h2> <button class="timer" data-timer="600"><span class="tm">10:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–2:</b> chọn 3 ứng dụng</li><li><b>Phút 3–8:</b> phân rã ba khối, ghi công nghệ</li><li><b>Phút 9–10:</b> ghi hạn chế, chuẩn bị báo cáo</li></ul>
+ <aside>Đi các nhóm hỏi: 'Đầu vào của hệ thống này là gì? Khối xử lý dùng công nghệ nào?'.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="6">
+ <span class="ph">Báo cáo · 6 phút</span>
+ <h2>Chia sẻ phân tích</h2> <p class="sm" style="">Mỗi nhóm 1,5 phút giới thiệu một ứng dụng; lớp hỏi 30 giây.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Nhóm nêu</b>Ứng dụng · ba khối · công nghệ chính · hạn chế.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp hỏi</b>Còn công nghệ nào khác trong ứng dụng này không?</div></div>
+ <aside>Chọn 4 nhóm. Ghi nhận phát hiện ứng dụng dùng nhiều công nghệ cùng lúc.</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="2">
+ <span class="ph">Củng cố · 2 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Camera nhận biển số xe chủ yếu dùng công nghệ nào?</span><br><span class="a">Thị giác máy tính.</span></div> <div class="rv"><span>2. Cảm biến nằm ở khối nào?</span><br><span class="a">Đầu vào.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li>Ba khối: <b>đầu vào, xử lý, đầu ra.</b></li><li>Bốn công nghệ: <b>chatbot, xử lý ngôn ngữ, thị giác máy tính, cảm biến.</b></li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Bảng phân tích công nghệ AI cho 3 ứng dụng.<br><b>Tiết sau: "Khái niệm và ứng dụng Mạng nơ-ron nhân tạo (ANN)" (Tiết 8, 11.C5.1). Chuẩn bị: nếu có thể, mở sẵn trang mô phỏng mạng nơ-ron trên máy.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>

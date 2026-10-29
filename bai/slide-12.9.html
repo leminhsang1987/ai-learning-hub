@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 12, Tiết 9: Phương pháp kiểm thử, đánh giá hiệu quả của hệ thống AI</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#12-09">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 12 · Tiết 9/12 · 12.C3.2</span>
+ <h1 style="margin-top:90px">Phương pháp kiểm thử, đánh giá hiệu quả của hệ thống AI</h1>
+ <p class="big mute" style="">Kiểm thử: AI có thật sự tốt?</p>
+ <aside>Nhắc lại tiết 8 (huấn luyện nhanh). Học sinh cần mô hình hoặc ảnh chụp kết quả của tiết 8, cùng 15 mẫu mới chưa dùng để học (vật thể, không dùng ảnh khuôn mặt). Chia nhóm 4–5 học sinh.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Thiết lập <b>tiêu chí đánh giá</b>: độ chính xác, độ tin cậy, độ trễ, trải nghiệm.</li><li>Dùng <b>tập kiểm tra độc lập</b> để đo và thống kê lỗi.</li><li>Giải thích hiện tượng <b>quá khớp (overfitting)</b>.</li></ul>
+ <aside>YCCĐ 12.C3.2 (liên hệ mở rộng 12.C3.MR3). Sản phẩm: Bộ tiêu chí đánh giá; Biên bản kết quả kiểm thử mô hình.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>100% có nghĩa là tốt?</h2> <p class="big" style="">Một mô hình đạt <b>100%</b> khi thử bằng chính những ảnh nó đã học. Có phải mô hình tốt?</p> <div class="rv f"><span>A. Có, quá tốt rồi</span></div> <div class="rv f"><span>B. Chưa chắc</span></div> <div class="rv f"><span>C. Không thể biết</span><br><span class="a">Muốn biết phải thử bằng <b>dữ liệu mới</b> mà mô hình chưa thấy.</span></div>
+ <aside>Cho giơ tay rồi bấm hiện câu dẫn. Giống chuyện học thuộc đề rồi làm đúng chính đề đó.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="5">
+ <span class="ph">Kiến thức · 5 phút</span>
+ <h2>Bốn tiêu chí đánh giá hiệu năng</h2> <div class="cols" style="grid-template-columns:repeat(4,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Độ chính xác</b>Tỉ lệ đúng = số đúng ÷ tổng số mẫu thử.</div><div class="card f sm"><b class="k" style="font-size:30px">Độ tin cậy</b>Kết quả ổn định qua nhiều lần, nhiều điều kiện.</div><div class="card f sm"><b class="k" style="font-size:30px">Độ trễ</b>Thời gian từ đầu vào đến kết quả.</div><div class="card f sm"><b class="k" style="font-size:30px">Trải nghiệm</b>Dễ dùng, dễ hiểu kết quả.</div></div>
+ <aside>Mỗi tiêu chí khoảng 1 phút. Hỏi học sinh: bài toán nào độ trễ rất quan trọng (ví dụ cảnh báo an toàn), bài toán nào ít quan trọng.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Kiến thức · 4 phút</span>
+ <h2>Tập huấn luyện và tập kiểm tra</h2> <table><tr><th>Tập</th><th>Dùng để</th><th>Quy tắc</th></tr><tr><td>Huấn luyện</td><td>Cho máy học</td><td>Không dùng để chấm điểm</td></tr><tr><td>Kiểm tra</td><td>Đo độ chính xác</td><td>Máy chưa từng học tập này</td></tr></table> <p class="sm" style="margin-top:12px">Ví dụ: 100 mẫu chia <b>80 để học</b> và <b>20 để kiểm tra</b>.</p>
+ <aside>Nhấn mạnh quy tắc: tập kiểm tra phải độc lập, nếu để lọt vào tập học thì kết quả bị thổi phồng.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="3">
+ <span class="ph">Làm mẫu · 3 phút</span>
+ <h2>Tính và thống kê lỗi</h2> <p class="sm" style=""><i>Số liệu giả định:</i> 20 ảnh kiểm tra, máy nhận đúng 16 ảnh, độ chính xác = 16 ÷ 20 = <b>80%</b>.</p> <table><tr><th>Nhãn thật</th><th>Máy nói</th><th>Số ca</th></tr><tr><td>Bút</td><td>Thước</td><td>2</td></tr><tr><td>Thước</td><td>Bút</td><td>1</td></tr><tr><td>Lá</td><td>Bút</td><td>1</td></tr></table>
+ <aside>Cho học sinh tự tính 4 ca sai (20 trừ 16). Hỏi: máy hay nhầm cặp nào, vì sao? Dẫn dắt đến cải thiện dữ liệu.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Overfitting · 4 phút</span>
+ <h2>Quá khớp: học thuộc lòng</h2> <table><tr><th>Mô hình</th><th>Trên dữ liệu học</th><th>Trên dữ liệu mới</th></tr><tr><td>Quá khớp</td><td>100%</td><td>65%</td></tr><tr><td>Học vừa phải</td><td>90%</td><td>85%</td></tr></table> <ul class="sm"><li><b>Nguyên nhân:</b> ít dữ liệu, dữ liệu giống nhau, mô hình quá phức tạp.</li><li><b>Cách giảm:</b> thêm dữ liệu đa dạng, đơn giản hóa, luôn thử bằng tập độc lập.</li></ul>
+ <aside>Số liệu giả định để minh họa. Nối với khái niệm 'học vẹt' của học sinh; liên hệ chất lượng dữ liệu ở khối 10.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: kiểm thử mô hình của nhóm</h2> <ul class="sm"><li>Đặt <b>bốn tiêu chí và ngưỡng đạt</b> (ví dụ chính xác ≥ 80%, trễ ≤ 1 giây).</li><li>Thử ít nhất <b>15 mẫu mới</b>; đếm đúng, sai; lập <b>bảng thống kê lỗi</b>.</li><li>Kết luận <b>đạt hay chưa đạt</b>, đề xuất <b>một cải thiện</b>.</li></ul>
+ <aside>Phát biên bản in. Có thể dùng Lab 'Tập kiểm tra độc lập và overfitting' khi đã kết nối. Nếu không có mô hình, nhóm đóng vai: một bạn là mô hình, các bạn khác đưa thẻ mới và ghi đúng sai.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="11">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian kiểm thử</h2> <button class="timer" data-timer="660"><span class="tm">11:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–2:</b> đặt tiêu chí và ngưỡng</li><li><b>Phút 3–8:</b> thử mẫu mới, ghi kết quả</li><li><b>Phút 9–11:</b> thống kê lỗi, kết luận, đề xuất cải thiện</li></ul>
+ <aside>Đi các nhóm hỏi: 'Mẫu thử này máy đã từng học chưa?'. Nhắc đo cả độ trễ (đếm thời gian) và trải nghiệm.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="6">
+ <span class="ph">Báo cáo · 6 phút</span>
+ <h2>Chia sẻ biên bản kiểm thử</h2> <p class="sm" style="">Mỗi nhóm 1,5 phút: độ chính xác, lỗi phổ biến, kết luận, cải thiện.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Nhóm nêu</b>Tiêu chí · kết quả · bảng lỗi · đạt hay chưa.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp hỏi</b>Mẫu thử đã đủ đa dạng chưa? Có dấu hiệu quá khớp không?</div></div>
+ <aside>Chọn 4 nhóm có kết quả khác nhau. Khen nhóm nhận ra nguyên nhân lỗi từ dữ liệu.</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="3">
+ <span class="ph">Củng cố · 3 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Thử 20 mẫu, đúng 18 mẫu: độ chính xác là bao nhiêu?</span><br><span class="a">90%.</span></div> <div class="rv"><span>2. Vì sao cần tập kiểm tra độc lập?</span><br><span class="a">Để đo mô hình trên dữ liệu chưa từng học, tránh kết quả thổi phồng.</span></div> <div class="rv"><span>3. Đúng hay sai: đúng 100% trên dữ liệu học là chắc chắn tốt.</span><br><span class="a">Sai. Có thể quá khớp; phải thử trên dữ liệu mới.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li>Đánh giá: <b>chính xác, tin cậy, độ trễ, trải nghiệm.</b></li><li>Luôn thử bằng <b>tập kiểm tra độc lập</b> để tránh <b>quá khớp</b>.</li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Bộ tiêu chí đánh giá · Biên bản kết quả kiểm thử.<br><b>Tiết sau: "Lựa chọn phương án thiết kế và vận hành hệ thống AI" (Tiết 10, 12.D1.1). Chuẩn bị: nghĩ 2–3 cách khác nhau để làm dự án của nhóm.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>

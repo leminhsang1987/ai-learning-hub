@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Khối 11, Tiết 9: Thuật toán học máy: Phân lớp và Phân cụm</title>
+<link rel="stylesheet" href="../assets/deck.css">
+<script defer src="../assets/deck.js"></script>
+</head>
+<body data-home="../index.html#11-09">
+<main class="deck">
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Khối 11 · Tiết 9/12 · 11.C5.2</span>
+ <h1 style="margin-top:90px">Thuật toán học máy: Phân lớp và Phân cụm</h1>
+ <p class="big mute" style="">Gán nhãn hay tìm nhóm?</p>
+ <aside>Nhắc lại tiết 8 (mạng nơ-ron) và khối 10 tiết 9 (phân loại, dự đoán, tạo sinh). Hôm nay nói rõ hơn về hai loại bài toán học máy. Chia nhóm 4–5 học sinh.</aside>
+</section>
+
+<section class="s" data-p="Mở đầu" data-m="1">
+ <span class="ph">Mở đầu</span>
+ <h2>Sau tiết học này, em có thể</h2> <ul class="big"><li>Nêu khái niệm <b>phân lớp</b> (có giám sát) và <b>phân cụm</b> (không giám sát).</li><li>Nêu <b>ứng dụng thực tế</b> của mỗi loại.</li><li>Lập <b>bảng so sánh</b> kèm ví dụ.</li></ul>
+ <aside>YCCĐ 11.C5.2 (mở rộng 11.C5.MR2). Sản phẩm: Bảng phân loại và so sánh bài toán Phân lớp và Phân cụm kèm ví dụ thực tế.</aside>
+</section>
+
+<section class="s" data-p="Khởi động" data-m="3">
+ <span class="ph">Khởi động · 3 phút</span>
+ <h2>Ba bài toán, hai cách học</h2> <div class="rv f"><span><b>1.</b> Máy lọc thư rác.</span></div> <div class="rv f"><span><b>2.</b> Gom 1000 bạn thành các nhóm sở thích, chưa biết có mấy nhóm.</span></div> <div class="rv f"><span><b>3.</b> Nhận diện loại bệnh trên lá cây.</span></div> <p class="f big" style="margin-top:10px">Khác nhau ở chỗ: dữ liệu đã <b>có nhãn sẵn</b> hay <b>chưa</b>?</p>
+ <aside>Cho học sinh nhóm thành hai loại theo cảm nhận. Dẫn dắt: có nhãn sẵn hay chưa là khác biệt chính.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="5">
+ <span class="ph">Kiến thức · 5 phút</span>
+ <h2>Hai loại bài toán</h2> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Phân lớp</b>Học có giám sát: dữ liệu <b>có nhãn</b>; học để <b>gán nhãn</b> cho dữ liệu mới.<p class="sm mute" style="margin:8px 0 0">Thư rác hay không? Bệnh nào?</p></div><div class="card f sm"><b class="k" style="font-size:30px">Phân cụm</b>Học không giám sát: dữ liệu <b>chưa có nhãn</b>; máy tự <b>tìm nhóm</b> giống nhau.<p class="sm mute" style="margin:8px 0 0">Nhóm sở thích, nhóm khách hàng.</p></div></div> <p class="f big" style="margin:14px 0 0">Câu hỏi nhận diện: <b>có nhãn sẵn để học không?</b></p>
+ <aside>Mỗi loại 2 phút. Nhắc lại khối 10: phân loại là đầu ra nhãn; ở đây nói rõ cách học.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="4">
+ <span class="ph">Ứng dụng · 4 phút</span>
+ <h2>Ứng dụng thực tế</h2> <table><tr><th>Bài toán</th><th>Loại</th><th>Vì sao</th></tr><tr><td>Lọc email rác</td><td>Phân lớp</td><td>Có nhãn: rác hoặc không</td></tr><tr><td>Nhận diện bệnh cây</td><td>Phân lớp</td><td>Có nhãn các loại bệnh</td></tr><tr><td>Gợi ý sở thích</td><td>Phân cụm</td><td>Tìm nhóm người dùng giống nhau</td></tr><tr><td>Phân nhóm khách hàng</td><td>Phân cụm</td><td>Chưa biết trước các nhóm</td></tr></table>
+ <aside>Hỏi học sinh cho thêm ví dụ ở mỗi loại. Nhắc: một hệ thống thực tế có thể dùng cả hai.</aside>
+</section>
+
+<section class="s" data-p="Hình thành kiến thức" data-m="2">
+ <span class="ph">Mẹo nhận diện · 2 phút</span>
+ <h2>Ba câu hỏi nhận diện</h2> <ul class="big"><li><b>Có nhãn</b> sẵn không?</li><li>Đầu ra là <b>tên nhóm đã biết</b> hay <b>nhóm mới</b> phải tìm?</li><li>Có cần <b>người gắn nhãn</b> trước không?</li></ul>
+ <aside>Ba câu hỏi gợi ý nhanh, không tuyệt đối.</aside>
+</section>
+
+<section class="s" data-p="Mở rộng" data-m="5">
+ <span class="ph">Mở rộng · 5 phút · 11.C5.MR2</span>
+ <h2>Hai ý tưởng thuật toán</h2> <ul class="sm"><li><b>k láng giềng gần nhất (phân lớp):</b> với điểm mới, nhìn <b>k điểm gần nhất</b> đã có nhãn và chọn nhãn xuất hiện nhiều nhất.</li><li><b>k-means (phân cụm):</b> chọn k tâm, gán điểm về tâm gần nhất, tính lại tâm, lặp lại.</li></ul> <p class="sm" style="margin-top:12px">Thử trên giấy: 8 điểm trên lưới, đổi <b>k</b> và quan sát kết quả.</p>
+ <aside>Phần mở rộng. Phát lưới điểm in sẵn; học sinh chạy tay k=1 và k=3. Có thể dùng Lab 'Gán nhãn hay tìm nhóm?' khi đã kết nối.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="2">
+ <span class="ph">Hoạt động nhóm</span>
+ <h2>Nhiệm vụ: xếp 8 tình huống</h2> <div class="cols" style="grid-template-columns:repeat(4,1fr);flex:0 1 auto"><div class="card sm">Dự đoán email có phải thư rác</div><div class="card sm">Gom bài hát theo phong cách, chưa gắn nhãn</div><div class="card sm">Nhận diện chữ số viết tay</div><div class="card sm">Chia học sinh theo thói quen học, chưa biết có mấy nhóm</div><div class="card sm">Nhận biết ảnh chó hay mèo</div><div class="card sm">Chia khu vực theo mức dùng điện</div><div class="card sm">Phát hiện giao dịch gian lận từ lịch sử có nhãn</div><div class="card sm">Gom bài báo cùng chủ đề</div></div> <ul class="sm"><li>Xếp vào <b>phân lớp</b> hoặc <b>phân cụm</b>, giải thích bằng câu hỏi nhận diện.</li><li>Điền <b>bảng so sánh</b> kèm ví dụ.</li></ul>
+ <aside>In 8 thẻ. Đáp án gợi ý: phân lớp (1, 3, 5, 7), phân cụm (2, 4, 6, 8). Thẻ 7 và 6 dễ gây tranh luận: yêu cầu nhóm nêu lý do.</aside>
+</section>
+
+<section class="s" data-p="Hoạt động nhóm" data-m="10">
+ <span class="ph">Hoạt động nhóm · bấm để chạy</span>
+ <h2>Thời gian làm việc nhóm</h2> <button class="timer" data-timer="600"><span class="tm">10:00</span><small>Bấm để bắt đầu</small></button>
+ <ul class="sm"><li><b>Phút 1–4:</b> xếp 8 thẻ, ghi lý do</li><li><b>Phút 5–8:</b> điền bảng so sánh</li><li><b>Phút 9–10:</b> chọn thẻ khó nhất để báo cáo</li></ul>
+ <aside>Đi các nhóm hỏi: 'Dữ liệu này có nhãn sẵn không? Ai gắn nhãn?'.</aside>
+</section>
+
+<section class="s" data-p="Báo cáo" data-m="7">
+ <span class="ph">Báo cáo · 7 phút</span>
+ <h2>Thẻ khó và phản biện</h2> <p class="sm" style="">Mỗi nhóm nêu thẻ khó nhất và lý do; lớp cùng bàn.</p> <div class="cols" style="grid-template-columns:repeat(2,1fr)"><div class="card f sm"><b class="k" style="font-size:30px">Nhóm nêu</b>Thẻ · cách xếp · lý do · câu hỏi nhận diện.</div><div class="card f sm"><b class="k" style="font-size:30px">Lớp hỏi</b>Có nhãn sẵn thật chưa? Có thể xếp cách khác không?</div></div>
+ <aside>Thừa nhận khi một tình huống có thể giải thích theo hai cách nếu lập luận rõ.</aside>
+</section>
+
+<section class="s" data-p="Củng cố" data-m="3">
+ <span class="ph">Củng cố · 3 phút</span>
+ <h2>Kiểm tra nhanh</h2> <div class="rv"><span>1. Lọc thư rác là phân lớp hay phân cụm?</span><br><span class="a">Phân lớp.</span></div> <div class="rv"><span>2. Phân nhóm khách hàng chưa biết trước nhóm là loại nào?</span><br><span class="a">Phân cụm.</span></div> <div class="rv"><span>3. Đúng hay sai: phân cụm cần người gắn nhãn trước.</span><br><span class="a">Sai. Phân cụm dùng dữ liệu chưa có nhãn.</span></div>
+ <aside>Cho trả lời miệng trước khi bấm hiện đáp án.</aside>
+</section>
+
+<section class="s" data-p="Tổng kết" data-m="2">
+ <span class="ph">Tổng kết</span>
+ <h2>Ghi nhớ</h2> <ul class="big"><li><b>Phân lớp:</b> có nhãn sẵn, gán nhãn cho dữ liệu mới.</li><li><b>Phân cụm:</b> chưa có nhãn, tự tìm nhóm giống nhau.</li></ul> <p class="sm" style="margin-top:12px"><b>Nộp:</b> Bảng phân loại và so sánh phân lớp, phân cụm.<br><b>Tiết sau: "Thiết kế tổng thể hệ thống AI" (Tiết 10, 11.D1.1). Chuẩn bị: nghĩ một hệ thống AI giúp trường học hoặc cộng đồng.</b></p>
+ <aside>Thu sản phẩm cuối tiết hoặc đầu tiết sau.</aside>
+</section>
+
+</main>
+</body>
+</html>
